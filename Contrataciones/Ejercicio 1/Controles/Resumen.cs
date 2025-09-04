@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ejercicio_1
+namespace Ejercicio_1.Controles
 {
-    public partial class Form1 : Form
+    public partial class Resumen : UserControl
     {
-        public Form1()
+        public Resumen()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // Test
         }
     }
 }
