@@ -23,8 +23,8 @@ namespace Ejercicio_1.Controles
                 cmbNroPersona.Enabled = true;
                 cmbNroPersona.Visible = true;
 
-                nupNroPersona.Enabled = false;
-                nupNroPersona.Visible = false;
+                txbNroPersona.Enabled = false;
+                txbNroPersona.Visible = false;
 
                 btnAceptar.Text = "Modificar";
             }
@@ -35,8 +35,8 @@ namespace Ejercicio_1.Controles
                 cmbNroPersona.Enabled = false;
                 cmbNroPersona.Visible = false;
 
-                nupNroPersona.Enabled = true;
-                nupNroPersona.Visible = true;
+                txbNroPersona.Enabled = true;
+                txbNroPersona.Visible = true;
 
                 btnAceptar.Text = "Agregar";
             }

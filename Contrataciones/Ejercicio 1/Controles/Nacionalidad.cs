@@ -23,8 +23,8 @@ namespace Ejercicio_1.Controles
                 cmbIDNacionalidad.Enabled = true;
                 cmbIDNacionalidad.Visible = true;
 
-                nupIDNacionalidad.Enabled = false;
-                nupIDNacionalidad.Visible = false;
+                txbIDNacionalidad.Enabled = false;
+                txbIDNacionalidad.Visible = false;
 
                 btnAceptar.Text = "Modificar";
             }
@@ -35,8 +35,8 @@ namespace Ejercicio_1.Controles
                 cmbIDNacionalidad.Enabled = false;
                 cmbIDNacionalidad.Visible = false;
 
-                nupIDNacionalidad.Enabled = true;
-                nupIDNacionalidad.Visible = true;
+                txbIDNacionalidad.Enabled = true;
+                txbIDNacionalidad.Visible = true;
 
                 btnAceptar.Text = "Agregar";
             }
