@@ -23,8 +23,8 @@ namespace Ejercicio_1.Controles
                 cmbIDProfesion.Enabled = true;
                 cmbIDProfesion.Visible = true;
 
-                nupIDProfesion.Enabled = false;
-                nupIDProfesion.Visible = false;
+                txbIDProfesion.Enabled = false;
+                txbIDProfesion.Visible = false;
 
                 btnAceptar.Text = "Modificar";
             }
@@ -35,8 +35,8 @@ namespace Ejercicio_1.Controles
                 cmbIDProfesion.Enabled = false;
                 cmbIDProfesion.Visible = false;
 
-                nupIDProfesion.Enabled = true;
-                nupIDProfesion.Visible = true;
+                txbIDProfesion.Enabled = true;
+                txbIDProfesion.Visible = true;
 
                 btnAceptar.Text = "Agregar";
             }

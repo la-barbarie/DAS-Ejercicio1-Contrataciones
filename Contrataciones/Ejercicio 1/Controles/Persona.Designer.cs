@@ -43,10 +43,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbNroPersona = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.nupNroPersona = new System.Windows.Forms.NumericUpDown();
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
+            this.txbNroPersona = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupNroPersona)).BeginInit();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,19 +175,11 @@
             this.btnAceptar.Text = "---";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // nupNroPersona
-            // 
-            this.nupNroPersona.Location = new System.Drawing.Point(91, 23);
-            this.nupNroPersona.Name = "nupNroPersona";
-            this.nupNroPersona.Size = new System.Drawing.Size(120, 20);
-            this.nupNroPersona.TabIndex = 7;
-            // 
             // gbxGrupo
             // 
+            this.gbxGrupo.Controls.Add(this.txbNroPersona);
             this.gbxGrupo.Controls.Add(this.btnAceptar);
-            this.gbxGrupo.Controls.Add(this.cmbNroPersona);
             this.gbxGrupo.Controls.Add(this.nupEdad);
-            this.gbxGrupo.Controls.Add(this.nupNroPersona);
             this.gbxGrupo.Controls.Add(this.label7);
             this.gbxGrupo.Controls.Add(this.label5);
             this.gbxGrupo.Controls.Add(this.label4);
@@ -201,12 +192,23 @@
             this.gbxGrupo.Controls.Add(this.label2);
             this.gbxGrupo.Controls.Add(this.txbNombre);
             this.gbxGrupo.Controls.Add(this.cmbNacionalidad);
+            this.gbxGrupo.Controls.Add(this.cmbNroPersona);
             this.gbxGrupo.Location = new System.Drawing.Point(10, 28);
             this.gbxGrupo.Name = "gbxGrupo";
             this.gbxGrupo.Size = new System.Drawing.Size(230, 272);
             this.gbxGrupo.TabIndex = 31;
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
+            // 
+            // txbNroPersona
+            // 
+            this.txbNroPersona.Location = new System.Drawing.Point(91, 24);
+            this.txbNroPersona.Name = "txbNroPersona";
+            this.txbNroPersona.ReadOnly = true;
+            this.txbNroPersona.Size = new System.Drawing.Size(120, 20);
+            this.txbNroPersona.TabIndex = 7;
+            this.txbNroPersona.Text = "---";
+            this.txbNroPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Persona
             // 
@@ -216,7 +218,6 @@
             this.Name = "Persona";
             this.Size = new System.Drawing.Size(250, 310);
             ((System.ComponentModel.ISupportInitialize)(this.nupEdad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupNroPersona)).EndInit();
             this.gbxGrupo.ResumeLayout(false);
             this.gbxGrupo.PerformLayout();
             this.ResumeLayout(false);
@@ -240,7 +241,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbNroPersona;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.NumericUpDown nupNroPersona;
         private System.Windows.Forms.GroupBox gbxGrupo;
+        private System.Windows.Forms.TextBox txbNroPersona;
     }
 }

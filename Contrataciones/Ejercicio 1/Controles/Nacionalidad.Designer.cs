@@ -30,12 +30,11 @@
         {
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txbNombre = new System.Windows.Forms.TextBox();
-            this.nupIDNacionalidad = new System.Windows.Forms.NumericUpDown();
             this.label41 = new System.Windows.Forms.Label();
             this.cmbIDNacionalidad = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nupIDNacionalidad)).BeginInit();
+            this.txbIDNacionalidad = new System.Windows.Forms.TextBox();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,13 +53,6 @@
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(120, 20);
             this.txbNombre.TabIndex = 24;
-            // 
-            // nupIDNacionalidad
-            // 
-            this.nupIDNacionalidad.Location = new System.Drawing.Point(91, 23);
-            this.nupIDNacionalidad.Name = "nupIDNacionalidad";
-            this.nupIDNacionalidad.Size = new System.Drawing.Size(120, 20);
-            this.nupIDNacionalidad.TabIndex = 23;
             // 
             // label41
             // 
@@ -92,18 +84,28 @@
             // gbxGrupo
             // 
             this.gbxGrupo.BackColor = System.Drawing.SystemColors.Control;
+            this.gbxGrupo.Controls.Add(this.txbIDNacionalidad);
             this.gbxGrupo.Controls.Add(this.label40);
             this.gbxGrupo.Controls.Add(this.btnAceptar);
-            this.gbxGrupo.Controls.Add(this.cmbIDNacionalidad);
             this.gbxGrupo.Controls.Add(this.txbNombre);
             this.gbxGrupo.Controls.Add(this.label41);
-            this.gbxGrupo.Controls.Add(this.nupIDNacionalidad);
+            this.gbxGrupo.Controls.Add(this.cmbIDNacionalidad);
             this.gbxGrupo.Location = new System.Drawing.Point(10, 28);
             this.gbxGrupo.Name = "gbxGrupo";
             this.gbxGrupo.Size = new System.Drawing.Size(230, 272);
             this.gbxGrupo.TabIndex = 31;
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
+            // 
+            // txbIDNacionalidad
+            // 
+            this.txbIDNacionalidad.Location = new System.Drawing.Point(91, 24);
+            this.txbIDNacionalidad.Name = "txbIDNacionalidad";
+            this.txbIDNacionalidad.ReadOnly = true;
+            this.txbIDNacionalidad.Size = new System.Drawing.Size(120, 20);
+            this.txbIDNacionalidad.TabIndex = 7;
+            this.txbIDNacionalidad.Text = "---";
+            this.txbIDNacionalidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nacionalidad
             // 
@@ -113,7 +115,6 @@
             this.Controls.Add(this.gbxGrupo);
             this.Name = "Nacionalidad";
             this.Size = new System.Drawing.Size(250, 310);
-            ((System.ComponentModel.ISupportInitialize)(this.nupIDNacionalidad)).EndInit();
             this.gbxGrupo.ResumeLayout(false);
             this.gbxGrupo.PerformLayout();
             this.ResumeLayout(false);
@@ -124,10 +125,10 @@
 
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txbNombre;
-        private System.Windows.Forms.NumericUpDown nupIDNacionalidad;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox cmbIDNacionalidad;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.GroupBox gbxGrupo;
+        private System.Windows.Forms.TextBox txbIDNacionalidad;
     }
 }
