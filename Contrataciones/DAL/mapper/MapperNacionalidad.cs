@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DAL.mapper
 {
-    internal class MapperNacionalidad
+    public class MapperNacionalidad
     {
         private readonly Connection connection = new Connection();
 

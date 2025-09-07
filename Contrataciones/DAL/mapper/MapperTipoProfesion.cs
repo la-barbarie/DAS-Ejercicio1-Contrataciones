@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.mapper
 {
-    internal class MapperTipoProfesion
+    public class MapperTipoProfesion
     {
         private readonly Connection connection = new Connection();
 

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace DAL
+namespace DAL.mapper
 {
-    internal class MapperPersona
+    public class MapperPersona
     {
         private readonly Connection connection = new Connection();
 
