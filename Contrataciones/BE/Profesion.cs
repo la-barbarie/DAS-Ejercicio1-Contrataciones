@@ -2,20 +2,7 @@
 {
     public class Profesion
     {
-        private int idProfesion;
-        
-        public int IdProfesion
-        {
-            get { return idProfesion; }
-            set { idProfesion = value; }
-        }
-        
-        private string nombre;
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+        private int IdProfesion { get; set; }
+        public string Nombre { get; set; }
     }
 }
