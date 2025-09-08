@@ -53,6 +53,12 @@ namespace BLL
             catch (Exception e) { throw e; }
         }
 
+        public BE.Profesion GetById(int id)
+        {
+            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
+            return mp.FindById(id);
+        }
+
         public List<BE.Profesion> ListarPersonas()
         {
             DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();

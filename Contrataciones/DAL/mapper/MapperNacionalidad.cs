@@ -1,6 +1,7 @@
 ﻿using BE;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace DAL.mapper
 {
@@ -25,6 +26,7 @@ namespace DAL.mapper
             return nacionalidades;
         }
 
+        public Nacionalidad FindById(int id) => GetAll().FirstOrDefault(p => p.IdNacionalidad == id);
         public int Insert(Nacionalidad nacionalidad)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>

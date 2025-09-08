@@ -53,6 +53,12 @@ namespace BLL
             catch (Exception e) { throw e; }
         }
 
+        public BE.Nacionalidad GetById(int id)
+        {
+            DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
+            return mp.FindById(id);
+        }
+
         public List<BE.Nacionalidad> ListarPersonas()
         {
             DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();

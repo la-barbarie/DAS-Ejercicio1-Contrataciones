@@ -75,6 +75,12 @@ namespace BLL
             catch (Exception e) { throw e; }
         }
 
+        public BE.Persona GetById(int id)
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            return mp.FindById(id);
+        }
+
         public List<BE.Persona> ListarPersonas()
         {
             DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();

@@ -29,6 +29,8 @@ namespace DAL.mapper
             return profesiones;
         }
 
+        public Profesion FindById(int id) => GetAll().FirstOrDefault(p => p.IdProfesion == id);
+
         public int Insert(Profesion profesion)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
