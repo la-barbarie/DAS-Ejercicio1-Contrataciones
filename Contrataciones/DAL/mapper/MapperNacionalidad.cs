@@ -43,7 +43,7 @@ namespace DAL.mapper
             return connection.Write("", ParameterUtils.BuildParameters(parameters));
         }
 
-        public int Delete(Nacionalidad nacionalidad)
+        public int Delete(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {

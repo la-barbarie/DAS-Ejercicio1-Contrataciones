@@ -28,7 +28,7 @@ namespace DAL.mapper
             return personas;
         }
 
-        public Persona FindById(Persona persona) => GetAll().FirstOrDefault(p => p.NumeroPersona == persona.NumeroPersona);
+        public Persona FindById(int id) => GetAll().FirstOrDefault(p => p.NumeroPersona == id);
 
         public int Insert(Persona persona)
         {
@@ -50,7 +50,7 @@ namespace DAL.mapper
             return connection.Write("", ParameterUtils.BuildParameters(parameters));
         }
 
-        public int Delete(Persona persona)
+        public int Delete(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
