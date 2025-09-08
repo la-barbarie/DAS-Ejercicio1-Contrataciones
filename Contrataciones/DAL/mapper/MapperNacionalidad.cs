@@ -1,4 +1,5 @@
 ﻿using BE;
+using BE.dto;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -77,6 +78,33 @@ namespace DAL.mapper
             };
 
             return connection.Write("sp_deleteNacionalidad", ParameterUtils.BuildParameters(parameters));
+        }
+
+        public PersonasNacionalidadDTO GetNacionalidadConMasOMenosPersonas(int orden)
+        {
+            PersonasNacionalidadDTO result = null;
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@orden", orden }
+            };
+
+            DataTable dataTable = connection.Read("sp_obtenerNacionalidadConMasOMenosPersonas", ParameterUtils.BuildParameters(parameters));
+            DataRow dataRow = dataTable.Rows.Cast<DataRow>().FirstOrDefault();
+
+            if (dataRow != null)
+            {
+                result = new PersonasNacionalidadDTO
+                {
+                    Nacionalidad = new Nacionalidad
+                    {
+                        IdNacionalidad = Convert.ToInt32(dataRow["id_nacionalidad"]),
+                        Nombre = dataRow["nombre"].ToString()
+                    },
+                    CantidadPersonas = Convert.ToInt32(dataRow["cantidad_personas"]),
+                };
+            }
+
+            return result;
         }
     }
 }

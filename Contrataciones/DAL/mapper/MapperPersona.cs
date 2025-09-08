@@ -1,4 +1,5 @@
 ﻿using BE;
+using BE.dto;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -93,6 +94,56 @@ namespace DAL.mapper
                 { "@numero_persona", id }
             };
             return connection.Write("sp_deletePersona", ParameterUtils.BuildParameters(parameters));
+        }
+
+        public int GetPromedioEdad() => (int)connection.Scalar("sp_calculateAvergaeAge", null);
+
+        public int GetMinOrMaxAge(int orden)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@orden", orden }
+            };
+
+            return (int)connection.Scalar("sp_calculateMinMaxAge", ParameterUtils.BuildParameters(parameters));
+        }
+
+        public int GetCantidadPersonas() => (int)connection.Scalar("sp_getCantidadPersonas", null);
+
+        public List<PersonasNacionalidadDTO> GetCantidadPersonasPorNacionalidad()
+        {
+            List<PersonasNacionalidadDTO> personasAgrupadas = new List<PersonasNacionalidadDTO>();
+            DataTable dataTable = connection.Read("sp_getPersonasAgrupadasPorNacionalidad", null);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                PersonasNacionalidadDTO dto = new PersonasNacionalidadDTO
+                {
+                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
+                    CantidadPersonas = (int)row["CantidadPersonas"]
+                };
+                personasAgrupadas.Add(dto);
+            }
+
+            return personasAgrupadas;
+        }
+
+        public List<PromedioEdadNacionalidadDTO> GetPromedioEdadPorNacionalidad()
+        {
+            List<PromedioEdadNacionalidadDTO> promedios = new List<PromedioEdadNacionalidadDTO>();
+            DataTable dataTable = connection.Read("sp_getPromedioEdadPorNacionalidad", null);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                PromedioEdadNacionalidadDTO dto = new PromedioEdadNacionalidadDTO
+                {
+                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
+                    PromedioEdad = (int)row["PromedioEdad"]
+                };
+                promedios.Add(dto);
+            }
+
+            return promedios;
         }
     }
 }
