@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dto\PersonasNacionalidadDTO.cs" />
+    <Compile Include="dto\PromedioEdadNacionalidadDTO.cs" />
     <Compile Include="enums\EOrden.cs" />
-    <Compile Include="entity\Nacionalidad.cs" />
-    <Compile Include="entity\Persona.cs" />
-    <Compile Include="entity\Profesion.cs" />
+    <Compile Include="Nacionalidad.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Profesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
