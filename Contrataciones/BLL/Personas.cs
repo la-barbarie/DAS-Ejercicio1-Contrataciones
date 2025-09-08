@@ -115,7 +115,7 @@ namespace BLL
         public int GetCantidadPersonasPorNacionalidad(int id) //ID de nacionalidad
         {
             DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
-            List<PersonasNacionalidadDTO> promedio = mp.GetCantidadPersonasPorNacionalidad();
+            List<PersonasNacionalidadDTO> promedio = mp.GetCantidadPersonasPorNacionalidad(id);
 
             int cantidad = 0;
             foreach(PersonasNacionalidadDTO p in promedio)
@@ -130,7 +130,7 @@ namespace BLL
         public int GetPromedioEdadPorNacionalidad(int id) //ID de nacionalidad
         {
             DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
-            List<PromedioEdadNacionalidadDTO> promedio = mp.GetPromedioEdadPorNacionalidad();
+            List<PromedioEdadNacionalidadDTO> promedio = mp.GetPromedioEdadPorNacionalidad(id);
 
             return promedio.Where(p => p.Nacionalidad.IdNacionalidad == id).First().PromedioEdad;
 
