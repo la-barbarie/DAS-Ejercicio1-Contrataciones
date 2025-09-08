@@ -65,6 +65,18 @@ namespace BLL
             return mp.GetAll();
         }
 
+        public BE.dto.PersonasNacionalidadDTO GetMinPersonasRegistradas()
+        {
+            DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
+            return mp.GetNacionalidadConMasOMenosPersonas(1);
+        }
+
+        public BE.dto.PersonasNacionalidadDTO GetMaxPersonasRegistradas()
+        {
+            DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
+            return mp.GetNacionalidadConMasOMenosPersonas(0);
+        }
+
     }
 }
 

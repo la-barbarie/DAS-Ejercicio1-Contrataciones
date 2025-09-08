@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE.dto;
 
 namespace BLL
 {
@@ -85,6 +86,55 @@ namespace BLL
         {
             DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
             return mp.GetAll();
+        }
+
+        public int GetPromedioEdad()
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            return mp.GetPromedioEdad();
+        }
+
+        public int GetCantidad()
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            return mp.GetCantidadPersonas();
+        }
+
+        public int GetMinEdad()
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            return mp.GetMinOrMaxAge(1);
+        }
+
+        public int GetMaxEdad()
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            return mp.GetMinOrMaxAge(0);
+        }
+
+        public int GetCantidadPersonasPorNacionalidad(int id) //ID de nacionalidad
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            List<PersonasNacionalidadDTO> promedio = mp.GetCantidadPersonasPorNacionalidad();
+
+            int cantidad = 0;
+            foreach(PersonasNacionalidadDTO p in promedio)
+            {
+                p.Nacionalidad.IdNacionalidad = id;
+                cantidad++;
+            }
+
+            return cantidad;
+        }
+
+        public int GetPromedioEdadPorNacionalidad(int id) //ID de nacionalidad
+        {
+            DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
+            List<PromedioEdadNacionalidadDTO> promedio = mp.GetPromedioEdadPorNacionalidad();
+
+            return promedio.Where(p => p.Nacionalidad.IdNacionalidad == id).First().PromedioEdad;
+
+            //medio nefasto pero veremos si funciona
         }
 
     }
