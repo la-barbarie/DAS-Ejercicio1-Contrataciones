@@ -12,14 +12,19 @@ namespace DAL.mapper
         public List<Persona> GetAll()
         {
             List<Persona> personas = new List<Persona>();
-            //TODO: Replace "" with the actual stored procedure name
-            DataTable dataTable = connection.Read("", null);
+            DataTable dataTable = connection.Read("sp_getAllPersonas", null);
 
             foreach (DataRow row in dataTable.Rows)
             {
                 Persona persona = new Persona
                 {
-                    //TODO: Map DataRow to Persona object
+                    NumeroPersona = (int)row["NumeroPersona"],
+                    Nombre = row["Nombre"].ToString(),
+                    Apellido = row["Apellido"].ToString(),
+                    Edad = (int)row["Edad"],
+                    Sexo = (bool)row["Sexo"],
+                    Nacionalidad = (int)row["Nacionalidad"],
+                    Profesion = (int)row["Profesion"]
                 };
 
                 personas.Add(persona);
@@ -28,36 +33,66 @@ namespace DAL.mapper
             return personas;
         }
 
-        public Persona FindById(int id) => GetAll().FirstOrDefault(p => p.NumeroPersona == id);
+        public Persona FindById(int id)
+        {
+            Persona persona = null;
+            DataTable dataTable = connection.Read("sp_getPersonaById", null);
+
+            DataRow dataRow = dataTable.AsEnumerable().FirstOrDefault(r => (int)r["NumeroPersona"] == id);
+
+            if (dataRow != null)
+            {
+                persona = new Persona
+                {
+                    NumeroPersona = (int)dataRow["NumeroPersona"],
+                    Nombre = dataRow["Nombre"].ToString(),
+                    Apellido = dataRow["Apellido"].ToString(),
+                    Edad = (int)dataRow["Edad"],
+                    Sexo = (bool)dataRow["Sexo"],
+                    Nacionalidad = (int)dataRow["Nacionalidad"],
+                    Profesion = (int)dataRow["Profesion"]
+                };
+            }
+
+            return persona;
+        }
 
         public int Insert(Persona persona)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                //TODO: Add parameters here
+                { "@nombre", persona.Nombre },
+                { "@apellido", persona.Apellido },
+                { "@edad", persona.Edad },
+                { "@sexo", persona.Sexo },
+                { "@nacionalidad", persona.Nacionalidad },
+                { "@profesion", persona.Profesion }
             };
-            //TODO: Replace "" with the actual stored procedure name
-            return connection.Write("", ParameterUtils.BuildParameters(parameters));
+            return connection.Write("sp_insertPersona", ParameterUtils.BuildParameters(parameters));
         }
 
         public int Update(Persona persona)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                //TODO: Add parameters here
+                { "@numero_persona", persona.NumeroPersona },
+                { "@nombre", persona.Nombre },
+                { "@apellido", persona.Apellido },
+                { "@edad", persona.Edad },
+                { "@sexo", persona.Sexo },
+                { "@nacionalidad", persona.Nacionalidad },
+                { "@profesion", persona.Profesion }
             };
-            //TODO: Replace "" with the actual stored procedure name
-            return connection.Write("", ParameterUtils.BuildParameters(parameters));
+            return connection.Write("sp_updatePersona", ParameterUtils.BuildParameters(parameters));
         }
 
         public int Delete(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                //TODO: Add parameters here
+                { "@numero_persona", id }
             };
-            //TODO: Replace "" with the actual stored procedure name
-            return connection.Write("", ParameterUtils.BuildParameters(parameters));
+            return connection.Write("sp_deletePersona", ParameterUtils.BuildParameters(parameters));
         }
     }
 }
