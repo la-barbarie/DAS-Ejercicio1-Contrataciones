@@ -19,7 +19,7 @@ namespace DAL.mapper
             {
                 Persona persona = new Persona
                 {
-                    NumeroPersona = (int)row["NumeroPersona"],
+                    NumeroPersona = (int)row["Numero_Persona"],
                     Nombre = row["Nombre"].ToString(),
                     Apellido = row["Apellido"].ToString(),
                     Edad = (int)row["Edad"],

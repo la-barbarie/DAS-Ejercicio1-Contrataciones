@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
-            this.cmbIDProfesion = new System.Windows.Forms.ComboBox();
+            this.txbIDProfesion = new System.Windows.Forms.TextBox();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txbIDProfesion = new System.Windows.Forms.TextBox();
+            this.cmbIDProfesion = new System.Windows.Forms.ComboBox();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,14 +53,15 @@
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
             // 
-            // cmbIDProfesion
+            // txbIDProfesion
             // 
-            this.cmbIDProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIDProfesion.FormattingEnabled = true;
-            this.cmbIDProfesion.Location = new System.Drawing.Point(91, 23);
-            this.cmbIDProfesion.Name = "cmbIDProfesion";
-            this.cmbIDProfesion.Size = new System.Drawing.Size(120, 21);
-            this.cmbIDProfesion.TabIndex = 7;
+            this.txbIDProfesion.Location = new System.Drawing.Point(91, 24);
+            this.txbIDProfesion.Name = "txbIDProfesion";
+            this.txbIDProfesion.ReadOnly = true;
+            this.txbIDProfesion.Size = new System.Drawing.Size(120, 20);
+            this.txbIDProfesion.TabIndex = 7;
+            this.txbIDProfesion.Text = "---";
+            this.txbIDProfesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbNombre
             // 
@@ -95,16 +96,16 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "---";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txbIDProfesion
+            // cmbIDProfesion
             // 
-            this.txbIDProfesion.Location = new System.Drawing.Point(91, 24);
-            this.txbIDProfesion.Name = "txbIDProfesion";
-            this.txbIDProfesion.ReadOnly = true;
-            this.txbIDProfesion.Size = new System.Drawing.Size(120, 20);
-            this.txbIDProfesion.TabIndex = 7;
-            this.txbIDProfesion.Text = "---";
-            this.txbIDProfesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbIDProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIDProfesion.FormattingEnabled = true;
+            this.cmbIDProfesion.Location = new System.Drawing.Point(91, 23);
+            this.cmbIDProfesion.Name = "cmbIDProfesion";
+            this.cmbIDProfesion.Size = new System.Drawing.Size(120, 21);
+            this.cmbIDProfesion.TabIndex = 7;
             // 
             // Profesion
             // 

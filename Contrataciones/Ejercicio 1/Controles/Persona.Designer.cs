@@ -126,7 +126,11 @@
             // 
             // cmbSexo
             // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
             this.cmbSexo.Location = new System.Drawing.Point(91, 127);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(120, 21);
@@ -134,6 +138,7 @@
             // 
             // cmbNacionalidad
             // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidad.FormattingEnabled = true;
             this.cmbNacionalidad.Location = new System.Drawing.Point(91, 154);
             this.cmbNacionalidad.Name = "cmbNacionalidad";
@@ -142,6 +147,7 @@
             // 
             // cmbProfesion
             // 
+            this.cmbProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfesion.FormattingEnabled = true;
             this.cmbProfesion.Location = new System.Drawing.Point(91, 181);
             this.cmbProfesion.Name = "cmbProfesion";
@@ -174,6 +180,7 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "---";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // gbxGrupo
             // 
