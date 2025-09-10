@@ -220,9 +220,9 @@ namespace DAL.mapper
             return promedios;
         }
 
-        public List<Persona> GetPersonasFiltradas(FiltrosDTO filtros)
+        public List<PersonaFiltrada> GetPersonasFiltradas(FiltrosDTO filtros)
         {
-            List<Persona> promedios = new List<Persona>();
+            List<PersonaFiltrada> promedios = new List<PersonaFiltrada>();
 
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
@@ -238,18 +238,18 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
-                Persona persona = new Persona
+                PersonaFiltrada personaFiltrada = new PersonaFiltrada
                 {
                     NumeroPersona = (int)row["numero_persona"],
                     Nombre = row["nombre"].ToString(),
                     Apellido = row["apellido"].ToString(),
                     Edad = (int)row["edad"],
                     Sexo = (bool)row["sexo"],
-                    Nacionalidad = (int)row["nacionalidad"],
-                    Profesion = (int)row["profesion"]
+                    Nacionalidad = row["nacionalidad"].ToString(),
+                    Profesion = row["profesion"].ToString()
                 };
 
-                promedios.Add(persona);
+                promedios.Add(personaFiltrada);
             }
 
             return promedios;
