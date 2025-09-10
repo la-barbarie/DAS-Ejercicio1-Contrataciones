@@ -52,14 +52,14 @@
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(12, 30);
+            this.txbNombre.Location = new System.Drawing.Point(12, 25);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(120, 20);
             this.txbNombre.TabIndex = 0;
             // 
             // txbApellido
             // 
-            this.txbApellido.Location = new System.Drawing.Point(138, 30);
+            this.txbApellido.Location = new System.Drawing.Point(138, 25);
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(120, 20);
             this.txbApellido.TabIndex = 1;
@@ -72,7 +72,7 @@
             "",
             "Femenino",
             "Masculino"});
-            this.cmbSexo.Location = new System.Drawing.Point(396, 30);
+            this.cmbSexo.Location = new System.Drawing.Point(396, 24);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(120, 21);
             this.cmbSexo.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             this.cmbNac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNac.FormattingEnabled = true;
-            this.cmbNac.Location = new System.Drawing.Point(522, 30);
+            this.cmbNac.Location = new System.Drawing.Point(522, 24);
             this.cmbNac.Name = "cmbNac";
             this.cmbNac.Size = new System.Drawing.Size(120, 21);
             this.cmbNac.TabIndex = 5;
@@ -93,16 +93,16 @@
             this.dgvDatos.AllowUserToResizeColumns = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(12, 56);
+            this.dgvDatos.Location = new System.Drawing.Point(12, 51);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(756, 362);
+            this.dgvDatos.Size = new System.Drawing.Size(756, 367);
             this.dgvDatos.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 14);
+            this.label1.Location = new System.Drawing.Point(50, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 9;
@@ -111,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 14);
+            this.label2.Location = new System.Drawing.Point(176, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 10;
@@ -120,7 +120,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(264, 14);
+            this.label3.Location = new System.Drawing.Point(266, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 11;
@@ -129,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 14);
+            this.label4.Location = new System.Drawing.Point(332, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 12;
@@ -138,7 +138,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(441, 14);
+            this.label5.Location = new System.Drawing.Point(441, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 13;
@@ -147,7 +147,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(548, 14);
+            this.label6.Location = new System.Drawing.Point(548, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 14;
@@ -156,7 +156,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(683, 14);
+            this.label7.Location = new System.Drawing.Point(683, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 15;
@@ -166,7 +166,7 @@
             // 
             this.cmbProf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProf.FormattingEnabled = true;
-            this.cmbProf.Location = new System.Drawing.Point(648, 30);
+            this.cmbProf.Location = new System.Drawing.Point(648, 24);
             this.cmbProf.Name = "cmbProf";
             this.cmbProf.Size = new System.Drawing.Size(120, 21);
             this.cmbProf.TabIndex = 6;
@@ -183,14 +183,14 @@
             // 
             // nupEdMin
             // 
-            this.nupEdMin.Location = new System.Drawing.Point(264, 30);
+            this.nupEdMin.Location = new System.Drawing.Point(264, 25);
             this.nupEdMin.Name = "nupEdMin";
             this.nupEdMin.Size = new System.Drawing.Size(60, 20);
             this.nupEdMin.TabIndex = 16;
             // 
             // nupEdMax
             // 
-            this.nupEdMax.Location = new System.Drawing.Point(330, 30);
+            this.nupEdMax.Location = new System.Drawing.Point(330, 25);
             this.nupEdMax.Name = "nupEdMax";
             this.nupEdMax.Size = new System.Drawing.Size(60, 20);
             this.nupEdMax.TabIndex = 16;
