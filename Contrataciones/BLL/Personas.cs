@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
 using BE.dto;
+using DAL.mapper;
 
 namespace BLL
 {
@@ -137,5 +139,10 @@ namespace BLL
             //medio nefasto pero veremos si funciona
         }
 
+        public List<Persona> ObtenerPersonasPorFiltros(FiltrosDTO filtros)
+        {
+            MapperPersona mapper = new MapperPersona();
+            return mapper.GetPersonasFiltradas(filtros);
+        }
     }
 }
