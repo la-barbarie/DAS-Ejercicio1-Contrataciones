@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BE.dto;
@@ -162,5 +162,10 @@ namespace BLL
             // Nota: podria optimizarse para no recorrer dos veces la lista
         }
 
+        public List<PersonaFiltrada> ObtenerPersonasPorFiltros(FiltrosDTO filtros)
+        {
+            MapperPersona mapper = new MapperPersona();
+            return mapper.GetPersonasFiltradas(filtros);
+        }
     }
 }

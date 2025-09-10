@@ -219,5 +219,40 @@ namespace DAL.mapper
 
             return promedios;
         }
+
+        public List<PersonaFiltrada> GetPersonasFiltradas(FiltrosDTO filtros)
+        {
+            List<PersonaFiltrada> promedios = new List<PersonaFiltrada>();
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@nombre", filtros.Nombre },
+                { "@apellido", filtros.Apellido },
+                { "@edad_minima", filtros.EdadMinima },
+                { "@edad_maxima", filtros.EdadMaxima },
+                { "@sexo", filtros.Sexo },
+                { "@nacionalidad", filtros.Nacionalidad },
+                { "@profesion", filtros.Profesion }
+            };
+            DataTable dataTable = connection.Read("sp_getPersonasFiltradas", ParameterUtils.BuildParameters(parameters));
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                PersonaFiltrada personaFiltrada = new PersonaFiltrada
+                {
+                    NumeroPersona = (int)row["numero_persona"],
+                    Nombre = row["nombre"].ToString(),
+                    Apellido = row["apellido"].ToString(),
+                    Edad = (int)row["edad"],
+                    Sexo = row["sexo"].ToString(),
+                    Nacionalidad = row["nombre_nacionalidad"].ToString(),
+                    Profesion = row["nombre_profesion"].ToString()
+                };
+
+                promedios.Add(personaFiltrada);
+            }
+
+            return promedios;
+        }
     }
 }

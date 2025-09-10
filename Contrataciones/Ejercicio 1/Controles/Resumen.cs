@@ -26,7 +26,7 @@ namespace Ejercicio_1.Controles
             BLL.Nacionalidad NacionalidadBLL = new BLL.Nacionalidad();
 
             cmbNroPersona.DataSource = PersonaBLL.ListarPersonas();
-            cmbNroPersona.DisplayMember = "Nombre";
+            cmbNroPersona.DisplayMember = "NumeroPersona";
             cmbNroPersona.SelectedIndex = -1;
 
             foreach (TextBox tx in tbpResumenPersona.Controls.OfType<TextBox>()) tx.Text = "";
@@ -68,6 +68,14 @@ namespace Ejercicio_1.Controles
             BE.Nacionalidad n = (BE.Nacionalidad)cmbSelectNac.SelectedValue;
             txbAvgEdadSelec.Text = new BLL.Personas().GetPromedioEdadPorNacionalidad(n.IdNacionalidad).ToString();
             txbCantPerSelec.Text = new BLL.Personas().GetCantidadPersonasPorNacionalidad(n.IdNacionalidad).ToString();
+        }
+
+        private void bntBusqAvanz_Click(object sender, EventArgs e)
+        {
+            FindForm().Visible = false;
+            Form BusquedaAv = new BusquedaAvanzada();
+            BusquedaAv.ShowDialog();
+            FindForm().Visible = true;
         }
     }
 }
