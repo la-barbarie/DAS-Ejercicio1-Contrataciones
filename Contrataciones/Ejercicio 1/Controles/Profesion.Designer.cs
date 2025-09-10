@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
-            this.cmbIDProfesion = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txbIDProfesion = new System.Windows.Forms.TextBox();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txbIDProfesion = new System.Windows.Forms.TextBox();
+            this.cmbIDProfesion = new System.Windows.Forms.ComboBox();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxGrupo
             // 
+            this.gbxGrupo.Controls.Add(this.btnEliminar);
             this.gbxGrupo.Controls.Add(this.txbIDProfesion);
             this.gbxGrupo.Controls.Add(this.txbNombre);
             this.gbxGrupo.Controls.Add(this.label2);
@@ -53,14 +55,25 @@
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
             // 
-            // cmbIDProfesion
+            // btnEliminar
             // 
-            this.cmbIDProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIDProfesion.FormattingEnabled = true;
-            this.cmbIDProfesion.Location = new System.Drawing.Point(91, 23);
-            this.cmbIDProfesion.Name = "cmbIDProfesion";
-            this.cmbIDProfesion.Size = new System.Drawing.Size(120, 21);
-            this.cmbIDProfesion.TabIndex = 7;
+            this.btnEliminar.Location = new System.Drawing.Point(19, 236);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(63, 20);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txbIDProfesion
+            // 
+            this.txbIDProfesion.Location = new System.Drawing.Point(91, 24);
+            this.txbIDProfesion.Name = "txbIDProfesion";
+            this.txbIDProfesion.ReadOnly = true;
+            this.txbIDProfesion.Size = new System.Drawing.Size(120, 20);
+            this.txbIDProfesion.TabIndex = 7;
+            this.txbIDProfesion.Text = "---";
+            this.txbIDProfesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbNombre
             // 
@@ -83,9 +96,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Profesion";
+            this.label1.Text = "Lista Prof.";
             // 
             // btnAceptar
             // 
@@ -95,16 +108,17 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "---";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txbIDProfesion
+            // cmbIDProfesion
             // 
-            this.txbIDProfesion.Location = new System.Drawing.Point(91, 24);
-            this.txbIDProfesion.Name = "txbIDProfesion";
-            this.txbIDProfesion.ReadOnly = true;
-            this.txbIDProfesion.Size = new System.Drawing.Size(120, 20);
-            this.txbIDProfesion.TabIndex = 7;
-            this.txbIDProfesion.Text = "---";
-            this.txbIDProfesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbIDProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIDProfesion.FormattingEnabled = true;
+            this.cmbIDProfesion.Location = new System.Drawing.Point(91, 23);
+            this.cmbIDProfesion.Name = "cmbIDProfesion";
+            this.cmbIDProfesion.Size = new System.Drawing.Size(120, 21);
+            this.cmbIDProfesion.TabIndex = 7;
+            this.cmbIDProfesion.SelectedIndexChanged += new System.EventHandler(this.cmbIDProfesion_SelectedIndexChanged);
             // 
             // Profesion
             // 
@@ -128,5 +142,6 @@
         private System.Windows.Forms.ComboBox cmbIDProfesion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txbIDProfesion;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

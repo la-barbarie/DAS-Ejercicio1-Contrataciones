@@ -33,21 +33,19 @@ namespace DAL.mapper
 
         public Profesion FindById(int id)
         {
-            Profesion profesion = null;
-            DataTable dataTable = connection.Read("sp_getProfesionById", null);
-
-            DataRow row = dataTable.AsEnumerable().FirstOrDefault(r => Convert.ToInt32(r["id_profesion"]) == id);
-
-            if (row != null)
+            Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                profesion = new Profesion
-                {
-                    IdProfesion = Convert.ToInt32(row["id_profesion"]),
-                    Nombre = row["nombre"].ToString()
-                };
-            }
+                { "@id_profesion", id }
+            };
 
-            return profesion;
+            DataTable dataTable = connection.Read("sp_getProfesionById", ParameterUtils.BuildParameters(parameters));
+            DataRow row = dataTable.Rows.Cast<DataRow>().FirstOrDefault() ?? throw new Exception("No se encontró la profesión con el ID proporcionado.");
+
+            return new Profesion
+            {
+                IdProfesion = Convert.ToInt32(row["id_profesion"]),
+                Nombre = row["nombre"].ToString()
+            };
         }
 
         public int Insert(Profesion profesion)

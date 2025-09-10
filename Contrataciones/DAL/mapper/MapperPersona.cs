@@ -1,5 +1,6 @@
 ﻿using BE;
 using BE.dto;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -19,13 +20,13 @@ namespace DAL.mapper
             {
                 Persona persona = new Persona
                 {
-                    NumeroPersona = (int)row["NumeroPersona"],
-                    Nombre = row["Nombre"].ToString(),
-                    Apellido = row["Apellido"].ToString(),
-                    Edad = (int)row["Edad"],
-                    Sexo = (bool)row["Sexo"],
-                    Nacionalidad = (int)row["Nacionalidad"],
-                    Profesion = (int)row["Profesion"]
+                    NumeroPersona = (int)row["numero_persona"],
+                    Nombre = row["nombre"].ToString(),
+                    Apellido = row["apellido"].ToString(),
+                    Edad = (int)row["edad"],
+                    Sexo = (bool)row["sexo"],
+                    Nacionalidad = (int)row["nacionalidad"],
+                    Profesion = (int)row["profesion"]
                 };
 
                 personas.Add(persona);
@@ -36,26 +37,24 @@ namespace DAL.mapper
 
         public Persona FindById(int id)
         {
-            Persona persona = null;
-            DataTable dataTable = connection.Read("sp_getPersonaById", null);
-
-            DataRow dataRow = dataTable.AsEnumerable().FirstOrDefault(r => (int)r["NumeroPersona"] == id);
-
-            if (dataRow != null)
+            Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                persona = new Persona
-                {
-                    NumeroPersona = (int)dataRow["NumeroPersona"],
-                    Nombre = dataRow["Nombre"].ToString(),
-                    Apellido = dataRow["Apellido"].ToString(),
-                    Edad = (int)dataRow["Edad"],
-                    Sexo = (bool)dataRow["Sexo"],
-                    Nacionalidad = (int)dataRow["Nacionalidad"],
-                    Profesion = (int)dataRow["Profesion"]
-                };
-            }
+                { "@numero_persona", id }
+            };
 
-            return persona;
+            DataTable dataTable = connection.Read("sp_getPersonaById", ParameterUtils.BuildParameters(parameters));
+            DataRow dataRow = dataTable.Rows.Cast<DataRow>().FirstOrDefault() ?? throw new Exception("No se encontró la persona con el ID proporcionado.");
+
+            return new Persona
+            {
+                NumeroPersona = (int)dataRow["numero_persona"],
+                Nombre = dataRow["nombre"].ToString(),
+                Apellido = dataRow["apellido"].ToString(),
+                Edad = (int)dataRow["edad"],
+                Sexo = (bool)dataRow["sexo"],
+                Nacionalidad = (int)dataRow["nacionalidad"],
+                Profesion = (int)dataRow["profesion"]
+            };
         }
 
         public int Insert(Persona persona)
@@ -122,10 +121,16 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
+                Nacionalidad nacionalidad = new Nacionalidad
+                {
+                    IdNacionalidad = (int)row["id_nacionalidad"],
+                    Nombre = row["nombre_nacionalidad"].ToString()
+                };
+
                 PersonasNacionalidadDTO dto = new PersonasNacionalidadDTO
                 {
-                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
-                    CantidadPersonas = (int)row["CantidadPersonas"]
+                    Nacionalidad = nacionalidad,
+                    CantidadPersonas = (int)row["cantidad_personas"]
                 };
                 personasAgrupadas.Add(dto);
             }
@@ -145,10 +150,16 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
+                Nacionalidad nacionalidad = new Nacionalidad
+                {
+                    IdNacionalidad = (int)row["id_nacionalidad"],
+                    Nombre = row["nombre_nacionalidad"].ToString()
+                };
+
                 PersonasNacionalidadDTO dto = new PersonasNacionalidadDTO
                 {
-                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
-                    CantidadPersonas = (int)row["CantidadPersonas"]
+                    Nacionalidad = nacionalidad,
+                    CantidadPersonas = (int)row["cantidad_personas"]
                 };
                 personasAgrupadas.Add(dto);
             }
@@ -163,10 +174,16 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
+                Nacionalidad nacionalidad = new Nacionalidad
+                {
+                    IdNacionalidad = (int)row["id_nacionalidad"],
+                    Nombre = row["nombre_nacionalidad"].ToString()
+                };
+
                 PromedioEdadNacionalidadDTO dto = new PromedioEdadNacionalidadDTO
                 {
-                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
-                    PromedioEdad = (int)row["PromedioEdad"]
+                    Nacionalidad = nacionalidad,
+                    PromedioEdad = (int)row["promedio_edad"]
                 };
                 promedios.Add(dto);
             }
@@ -186,10 +203,16 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
+                Nacionalidad nacionalidad = new Nacionalidad
+                {
+                    IdNacionalidad = (int)row["id_nacionalidad"],
+                    Nombre = row["nombre_nacionalidad"].ToString()
+                };
+
                 PromedioEdadNacionalidadDTO dto = new PromedioEdadNacionalidadDTO
                 {
-                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
-                    PromedioEdad = (int)row["PromedioEdad"]
+                    Nacionalidad = nacionalidad,
+                    PromedioEdad = (int)row["promedio_edad"]
                 };
                 promedios.Add(dto);
             }

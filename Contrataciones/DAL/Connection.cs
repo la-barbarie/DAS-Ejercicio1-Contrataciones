@@ -16,7 +16,7 @@ namespace DAL
 
         private void Connect()
         {
-            sqlConnection.ConnectionString = ConfigurationManager.ConnectionStrings["Facultad"]?.ConnectionString;
+            sqlConnection.ConnectionString = ConfigurationManager.ConnectionStrings["Contrataciones"]?.ConnectionString;
             sqlConnection.Open();
         }
 

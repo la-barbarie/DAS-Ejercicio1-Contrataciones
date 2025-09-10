@@ -32,21 +32,19 @@ namespace DAL.mapper
 
         public Nacionalidad FindById(int id)
         {
-            Nacionalidad nacionalidad = null;
-            DataTable dataTable = connection.Read("sp_getNacionalidadById", null);
-
-            DataRow row = dataTable.AsEnumerable().FirstOrDefault(r => Convert.ToInt32(r["id_nacionalidad"]) == id);
-
-            if (row != null)
+            Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                nacionalidad = new Nacionalidad
-                {
-                    IdNacionalidad = Convert.ToInt32(row["id_nacionalidad"]),
-                    Nombre = row["nombre"].ToString()
-                };
-            }
+                { "@id_nacionalidad", id }
+            };
 
-            return nacionalidad;
+            DataTable dataTable = connection.Read("sp_getNacionalidadById", ParameterUtils.BuildParameters(parameters));
+            DataRow dataRow = dataTable.Rows.Cast<DataRow>().FirstOrDefault() ?? throw new Exception("No se encontró la nacionalidad con el ID proporcionado.");
+
+            return new Nacionalidad()
+            {
+                IdNacionalidad = Convert.ToInt32(dataRow["id_nacionalidad"]),
+                Nombre = dataRow["nombre"].ToString()
+            };
         }
 
         public int Insert(Nacionalidad nacionalidad)

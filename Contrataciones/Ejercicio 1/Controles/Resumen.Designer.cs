@@ -28,94 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbcResumenPersona = new System.Windows.Forms.TabControl();
+            this.tbpResumenPersona = new System.Windows.Forms.TabPage();
+            this.txbProfesion = new System.Windows.Forms.TextBox();
+            this.txbNacionalidad = new System.Windows.Forms.TextBox();
+            this.txbSexo = new System.Windows.Forms.TextBox();
+            this.txbEdad = new System.Windows.Forms.TextBox();
+            this.txbApellido = new System.Windows.Forms.TextBox();
+            this.txbNombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbNroPersona = new System.Windows.Forms.ComboBox();
-            this.txbNombre = new System.Windows.Forms.TextBox();
-            this.txbApellido = new System.Windows.Forms.TextBox();
-            this.txbEdad = new System.Windows.Forms.TextBox();
-            this.txbSexo = new System.Windows.Forms.TextBox();
-            this.txbNacionalidad = new System.Windows.Forms.TextBox();
-            this.txbProfesion = new System.Windows.Forms.TextBox();
-            this.txbCantPersonasGral = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txbAvgEdadSelec = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txbCantPerSelec = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cmbSelectNac = new System.Windows.Forms.ComboBox();
+            this.txbNacMenosCant = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txbNacMasCant = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txbCantPersonasGral = new System.Windows.Forms.TextBox();
             this.txbEdadMinGral = new System.Windows.Forms.TextBox();
             this.txbEdadAvgGral = new System.Windows.Forms.TextBox();
             this.txbEdadMaxGral = new System.Windows.Forms.TextBox();
-            this.txbNacMasCant = new System.Windows.Forms.TextBox();
-            this.txbNacMenosCant = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmbSelectNac = new System.Windows.Forms.ComboBox();
-            this.txbCantPerSelec = new System.Windows.Forms.TextBox();
-            this.txbAvgEdadSelec = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.tbcResumenPersona.SuspendLayout();
+            this.tbpResumenPersona.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tbcResumenPersona
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(250, 310);
-            this.tabControl1.TabIndex = 0;
+            this.tbcResumenPersona.Controls.Add(this.tbpResumenPersona);
+            this.tbcResumenPersona.Controls.Add(this.tabPage2);
+            this.tbcResumenPersona.Location = new System.Drawing.Point(0, 0);
+            this.tbcResumenPersona.Name = "tbcResumenPersona";
+            this.tbcResumenPersona.SelectedIndex = 0;
+            this.tbcResumenPersona.Size = new System.Drawing.Size(250, 310);
+            this.tbcResumenPersona.TabIndex = 0;
             // 
-            // tabPage1
+            // tbpResumenPersona
             // 
-            this.tabPage1.Controls.Add(this.txbProfesion);
-            this.tabPage1.Controls.Add(this.txbNacionalidad);
-            this.tabPage1.Controls.Add(this.txbSexo);
-            this.tabPage1.Controls.Add(this.txbEdad);
-            this.tabPage1.Controls.Add(this.txbApellido);
-            this.tabPage1.Controls.Add(this.txbNombre);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.cmbNroPersona);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(242, 284);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Consultar persona";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tbpResumenPersona.Controls.Add(this.txbProfesion);
+            this.tbpResumenPersona.Controls.Add(this.txbNacionalidad);
+            this.tbpResumenPersona.Controls.Add(this.txbSexo);
+            this.tbpResumenPersona.Controls.Add(this.txbEdad);
+            this.tbpResumenPersona.Controls.Add(this.txbApellido);
+            this.tbpResumenPersona.Controls.Add(this.txbNombre);
+            this.tbpResumenPersona.Controls.Add(this.label7);
+            this.tbpResumenPersona.Controls.Add(this.label2);
+            this.tbpResumenPersona.Controls.Add(this.label3);
+            this.tbpResumenPersona.Controls.Add(this.label4);
+            this.tbpResumenPersona.Controls.Add(this.label5);
+            this.tbpResumenPersona.Controls.Add(this.label6);
+            this.tbpResumenPersona.Controls.Add(this.cmbNroPersona);
+            this.tbpResumenPersona.Controls.Add(this.groupBox3);
+            this.tbpResumenPersona.Location = new System.Drawing.Point(4, 22);
+            this.tbpResumenPersona.Name = "tbpResumenPersona";
+            this.tbpResumenPersona.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpResumenPersona.Size = new System.Drawing.Size(242, 284);
+            this.tbpResumenPersona.TabIndex = 0;
+            this.tbpResumenPersona.Text = "Consultar persona";
+            this.tbpResumenPersona.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // txbProfesion
             // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(242, 354);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Resumen";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.txbProfesion.Location = new System.Drawing.Point(97, 187);
+            this.txbProfesion.Name = "txbProfesion";
+            this.txbProfesion.ReadOnly = true;
+            this.txbProfesion.Size = new System.Drawing.Size(120, 20);
+            this.txbProfesion.TabIndex = 29;
+            // 
+            // txbNacionalidad
+            // 
+            this.txbNacionalidad.Location = new System.Drawing.Point(97, 160);
+            this.txbNacionalidad.Name = "txbNacionalidad";
+            this.txbNacionalidad.ReadOnly = true;
+            this.txbNacionalidad.Size = new System.Drawing.Size(120, 20);
+            this.txbNacionalidad.TabIndex = 28;
+            // 
+            // txbSexo
+            // 
+            this.txbSexo.Location = new System.Drawing.Point(97, 133);
+            this.txbSexo.Name = "txbSexo";
+            this.txbSexo.ReadOnly = true;
+            this.txbSexo.Size = new System.Drawing.Size(120, 20);
+            this.txbSexo.TabIndex = 27;
+            // 
+            // txbEdad
+            // 
+            this.txbEdad.Location = new System.Drawing.Point(97, 107);
+            this.txbEdad.Name = "txbEdad";
+            this.txbEdad.ReadOnly = true;
+            this.txbEdad.Size = new System.Drawing.Size(120, 20);
+            this.txbEdad.TabIndex = 26;
+            // 
+            // txbApellido
+            // 
+            this.txbApellido.Location = new System.Drawing.Point(97, 81);
+            this.txbApellido.Name = "txbApellido";
+            this.txbApellido.ReadOnly = true;
+            this.txbApellido.Size = new System.Drawing.Size(120, 20);
+            this.txbApellido.TabIndex = 25;
+            // 
+            // txbNombre
+            // 
+            this.txbNombre.Location = new System.Drawing.Point(97, 55);
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.ReadOnly = true;
+            this.txbNombre.Size = new System.Drawing.Size(120, 20);
+            this.txbNombre.TabIndex = 24;
             // 
             // label7
             // 
@@ -125,15 +161,6 @@
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 21;
             this.label7.Text = "Profesión";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "P. Número";
             // 
             // label2
             // 
@@ -188,62 +215,90 @@
             this.cmbNroPersona.Name = "cmbNroPersona";
             this.cmbNroPersona.Size = new System.Drawing.Size(120, 21);
             this.cmbNroPersona.TabIndex = 23;
+            this.cmbNroPersona.SelectedIndexChanged += new System.EventHandler(this.cmbNroPersona_SelectedIndexChanged);
             // 
-            // txbNombre
+            // groupBox3
             // 
-            this.txbNombre.Location = new System.Drawing.Point(97, 55);
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.ReadOnly = true;
-            this.txbNombre.Size = new System.Drawing.Size(120, 20);
-            this.txbNombre.TabIndex = 24;
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(230, 272);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Resumen - Por persona";
             // 
-            // txbApellido
+            // label1
             // 
-            this.txbApellido.Location = new System.Drawing.Point(97, 81);
-            this.txbApellido.Name = "txbApellido";
-            this.txbApellido.ReadOnly = true;
-            this.txbApellido.Size = new System.Drawing.Size(120, 20);
-            this.txbApellido.TabIndex = 25;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "P. Número";
             // 
-            // txbEdad
+            // tabPage2
             // 
-            this.txbEdad.Location = new System.Drawing.Point(97, 107);
-            this.txbEdad.Name = "txbEdad";
-            this.txbEdad.ReadOnly = true;
-            this.txbEdad.Size = new System.Drawing.Size(120, 20);
-            this.txbEdad.TabIndex = 26;
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(242, 284);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Resumen";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txbSexo
+            // groupBox2
             // 
-            this.txbSexo.Location = new System.Drawing.Point(97, 133);
-            this.txbSexo.Name = "txbSexo";
-            this.txbSexo.ReadOnly = true;
-            this.txbSexo.Size = new System.Drawing.Size(120, 20);
-            this.txbSexo.TabIndex = 27;
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txbAvgEdadSelec);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.txbCantPerSelec);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.cmbSelectNac);
+            this.groupBox2.Controls.Add(this.txbNacMenosCant);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txbNacMasCant);
+            this.groupBox2.Location = new System.Drawing.Point(6, 116);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(230, 162);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Resumen - Por país";
             // 
-            // txbNacionalidad
+            // label12
             // 
-            this.txbNacionalidad.Location = new System.Drawing.Point(97, 160);
-            this.txbNacionalidad.Name = "txbNacionalidad";
-            this.txbNacionalidad.ReadOnly = true;
-            this.txbNacionalidad.Size = new System.Drawing.Size(120, 20);
-            this.txbNacionalidad.TabIndex = 28;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(195, 13);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Nacionalidad por cant. ( menor - mayor )";
             // 
-            // txbProfesion
+            // txbAvgEdadSelec
             // 
-            this.txbProfesion.Location = new System.Drawing.Point(97, 187);
-            this.txbProfesion.Name = "txbProfesion";
-            this.txbProfesion.ReadOnly = true;
-            this.txbProfesion.Size = new System.Drawing.Size(120, 20);
-            this.txbProfesion.TabIndex = 29;
+            this.txbAvgEdadSelec.Location = new System.Drawing.Point(118, 126);
+            this.txbAvgEdadSelec.Name = "txbAvgEdadSelec";
+            this.txbAvgEdadSelec.ReadOnly = true;
+            this.txbAvgEdadSelec.Size = new System.Drawing.Size(93, 20);
+            this.txbAvgEdadSelec.TabIndex = 47;
             // 
-            // txbCantPersonasGral
+            // label14
             // 
-            this.txbCantPersonasGral.Location = new System.Drawing.Point(118, 21);
-            this.txbCantPersonasGral.Name = "txbCantPersonasGral";
-            this.txbCantPersonasGral.ReadOnly = true;
-            this.txbCantPersonasGral.Size = new System.Drawing.Size(93, 20);
-            this.txbCantPersonasGral.TabIndex = 38;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 77);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 13);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Selector de nac.";
+            // 
+            // txbCantPerSelec
+            // 
+            this.txbCantPerSelec.Location = new System.Drawing.Point(118, 100);
+            this.txbCantPerSelec.Name = "txbCantPerSelec";
+            this.txbCantPerSelec.ReadOnly = true;
+            this.txbCantPerSelec.Size = new System.Drawing.Size(93, 20);
+            this.txbCantPerSelec.TabIndex = 46;
             // 
             // label8
             // 
@@ -253,6 +308,56 @@
             this.label8.Size = new System.Drawing.Size(93, 13);
             this.label8.TabIndex = 36;
             this.label8.Text = "Cant. de personas";
+            // 
+            // cmbSelectNac
+            // 
+            this.cmbSelectNac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectNac.FormattingEnabled = true;
+            this.cmbSelectNac.Location = new System.Drawing.Point(118, 73);
+            this.cmbSelectNac.Name = "cmbSelectNac";
+            this.cmbSelectNac.Size = new System.Drawing.Size(93, 21);
+            this.cmbSelectNac.TabIndex = 45;
+            this.cmbSelectNac.SelectedIndexChanged += new System.EventHandler(this.cmbSelectNac_SelectedIndexChanged);
+            // 
+            // txbNacMenosCant
+            // 
+            this.txbNacMenosCant.Location = new System.Drawing.Point(19, 47);
+            this.txbNacMenosCant.Name = "txbNacMenosCant";
+            this.txbNacMenosCant.ReadOnly = true;
+            this.txbNacMenosCant.Size = new System.Drawing.Size(93, 20);
+            this.txbNacMenosCant.TabIndex = 42;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 130);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Promedio de edad";
+            // 
+            // txbNacMasCant
+            // 
+            this.txbNacMasCant.Location = new System.Drawing.Point(118, 47);
+            this.txbNacMasCant.Name = "txbNacMasCant";
+            this.txbNacMasCant.ReadOnly = true;
+            this.txbNacMasCant.Size = new System.Drawing.Size(93, 20);
+            this.txbNacMasCant.TabIndex = 43;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txbCantPersonasGral);
+            this.groupBox1.Controls.Add(this.txbEdadMinGral);
+            this.groupBox1.Controls.Add(this.txbEdadAvgGral);
+            this.groupBox1.Controls.Add(this.txbEdadMaxGral);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(230, 107);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Resumen - General";
             // 
             // label9
             // 
@@ -272,23 +377,13 @@
             this.label10.TabIndex = 31;
             this.label10.Text = "Edad ( mínima - promedio - máxima )";
             // 
-            // label12
+            // txbCantPersonasGral
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 25);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(195, 13);
-            this.label12.TabIndex = 33;
-            this.label12.Text = "Nacionalidad por cant. ( menor - mayor )";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 77);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 13);
-            this.label14.TabIndex = 35;
-            this.label14.Text = "Selector de nac.";
+            this.txbCantPersonasGral.Location = new System.Drawing.Point(118, 21);
+            this.txbCantPersonasGral.Name = "txbCantPersonasGral";
+            this.txbCantPersonasGral.ReadOnly = true;
+            this.txbCantPersonasGral.Size = new System.Drawing.Size(93, 20);
+            this.txbCantPersonasGral.TabIndex = 38;
             // 
             // txbEdadMinGral
             // 
@@ -314,123 +409,31 @@
             this.txbEdadMaxGral.Size = new System.Drawing.Size(60, 20);
             this.txbEdadMaxGral.TabIndex = 41;
             // 
-            // txbNacMasCant
-            // 
-            this.txbNacMasCant.Location = new System.Drawing.Point(118, 47);
-            this.txbNacMasCant.Name = "txbNacMasCant";
-            this.txbNacMasCant.ReadOnly = true;
-            this.txbNacMasCant.Size = new System.Drawing.Size(93, 20);
-            this.txbNacMasCant.TabIndex = 43;
-            // 
-            // txbNacMenosCant
-            // 
-            this.txbNacMenosCant.Location = new System.Drawing.Point(19, 47);
-            this.txbNacMenosCant.Name = "txbNacMenosCant";
-            this.txbNacMenosCant.ReadOnly = true;
-            this.txbNacMenosCant.Size = new System.Drawing.Size(93, 20);
-            this.txbNacMenosCant.TabIndex = 42;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 130);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 13);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Promedio de edad";
-            // 
-            // cmbSelectNac
-            // 
-            this.cmbSelectNac.FormattingEnabled = true;
-            this.cmbSelectNac.Location = new System.Drawing.Point(118, 73);
-            this.cmbSelectNac.Name = "cmbSelectNac";
-            this.cmbSelectNac.Size = new System.Drawing.Size(93, 21);
-            this.cmbSelectNac.TabIndex = 45;
-            // 
-            // txbCantPerSelec
-            // 
-            this.txbCantPerSelec.Location = new System.Drawing.Point(118, 100);
-            this.txbCantPerSelec.Name = "txbCantPerSelec";
-            this.txbCantPerSelec.ReadOnly = true;
-            this.txbCantPerSelec.Size = new System.Drawing.Size(93, 20);
-            this.txbCantPerSelec.TabIndex = 46;
-            // 
-            // txbAvgEdadSelec
-            // 
-            this.txbAvgEdadSelec.Location = new System.Drawing.Point(118, 126);
-            this.txbAvgEdadSelec.Name = "txbAvgEdadSelec";
-            this.txbAvgEdadSelec.ReadOnly = true;
-            this.txbAvgEdadSelec.Size = new System.Drawing.Size(93, 20);
-            this.txbAvgEdadSelec.TabIndex = 47;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txbCantPersonasGral);
-            this.groupBox1.Controls.Add(this.txbEdadMinGral);
-            this.groupBox1.Controls.Add(this.txbEdadAvgGral);
-            this.groupBox1.Controls.Add(this.txbEdadMaxGral);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 107);
-            this.groupBox1.TabIndex = 48;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Resumen - General";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txbAvgEdadSelec);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.txbCantPerSelec);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.cmbSelectNac);
-            this.groupBox2.Controls.Add(this.txbNacMenosCant);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txbNacMasCant);
-            this.groupBox2.Location = new System.Drawing.Point(6, 116);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 162);
-            this.groupBox2.TabIndex = 49;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Resumen - Por país";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(6, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(230, 272);
-            this.groupBox3.TabIndex = 30;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Resumen - Por persona";
-            // 
             // Resumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tbcResumenPersona);
             this.Name = "Resumen";
             this.Size = new System.Drawing.Size(250, 310);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.tbcResumenPersona.ResumeLayout(false);
+            this.tbpResumenPersona.ResumeLayout(false);
+            this.tbpResumenPersona.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tbcResumenPersona;
+        private System.Windows.Forms.TabPage tbpResumenPersona;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txbProfesion;
         private System.Windows.Forms.TextBox txbNacionalidad;
