@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dto\FiltrosDTO.cs" />
     <Compile Include="dto\PersonasNacionalidadDTO.cs" />
     <Compile Include="dto\PromedioEdadNacionalidadDTO.cs" />
     <Compile Include="enums\EOrden.cs" />
