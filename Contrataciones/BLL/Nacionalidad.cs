@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE.enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,18 @@ namespace BLL
         {
             DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
             return mp.GetAll();
+        }
+
+        public BE.dto.PersonasNacionalidadDTO GetMinPersonasRegistradas()
+        {
+            DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
+            return mp.GetNacionalidadConMasOMenosPersonas(((int)EOrden.MIN));
+        }
+
+        public BE.dto.PersonasNacionalidadDTO GetMaxPersonasRegistradas()
+        {
+            DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
+            return mp.GetNacionalidadConMasOMenosPersonas((int)EOrden.MAX);
         }
 
     }

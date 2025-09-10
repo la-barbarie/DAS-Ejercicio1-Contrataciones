@@ -80,6 +80,11 @@ namespace DAL.mapper
             return connection.Write("sp_deleteNacionalidad", ParameterUtils.BuildParameters(parameters));
         }
 
+        /// <summary>
+        ///  Se buscan la nacionalidad con mayor o menor cantidad de personas asociadas.
+        /// </summary>
+        /// <param name="orden">EOrden.MAX para mayor cantidad, EOrden.MIN para menor cantidad.</param>
+        /// <returns>Objeto de tipo PersonasNacionalidadDTO con la nacionalidad y la cantidad de personas asociadas.</returns>
         public PersonasNacionalidadDTO GetNacionalidadConMasOMenosPersonas(int orden)
         {
             PersonasNacionalidadDTO result = null;
