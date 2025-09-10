@@ -44,11 +44,11 @@ namespace Ejercicio_1.Controles
 
             cmbSexo.SelectedIndex = -1;
 
-            cmbNacionalidad.DataSource = new BLL.Nacionalidad().ListarPersonas();
+            cmbNacionalidad.DataSource = new BLL.Nacionalidad().ListarNacionalidades();
             cmbNacionalidad.DisplayMember = "Nombre";
             cmbNacionalidad.SelectedIndex = -1;
 
-            cmbProfesion.DataSource = new BLL.Profesion().ListarPersonas();
+            cmbProfesion.DataSource = new BLL.Profesion().ListarProfesiones();
             cmbProfesion.DisplayMember = "Nombre";
             cmbProfesion.SelectedIndex = -1;
 

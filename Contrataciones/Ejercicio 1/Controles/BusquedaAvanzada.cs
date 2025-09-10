@@ -18,12 +18,12 @@ namespace Ejercicio_1.Controles
         {
             InitializeComponent();
 
-            List<BE.Nacionalidad> nacionalidades = new BLL.Nacionalidad().ListarPersonas();
+            List<BE.Nacionalidad> nacionalidades = new BLL.Nacionalidad().ListarNacionalidades();
             nacionalidades.Insert(0, new BE.Nacionalidad());
             cmbNac.DataSource = nacionalidades;
             cmbNac.DisplayMember = "Nombre";
 
-            List<BE.Profesion> profesiones = new BLL.Profesion().ListarPersonas();
+            List<BE.Profesion> profesiones = new BLL.Profesion().ListarProfesiones();
             profesiones.Insert(0, new BE.Profesion());
             cmbProf.DataSource = profesiones;
             cmbProf.DisplayMember = "Nombre";

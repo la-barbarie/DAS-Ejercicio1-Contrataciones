@@ -37,7 +37,7 @@ namespace Ejercicio_1.Controles
 
         private void ActualizarControles()
         {
-            cmbIDNacionalidad.DataSource = new BLL.Nacionalidad().ListarPersonas();
+            cmbIDNacionalidad.DataSource = new BLL.Nacionalidad().ListarNacionalidades();
             cmbIDNacionalidad.DisplayMember = "Nombre";
             cmbIDNacionalidad.ValueMember = "IdNacionalidad";
             cmbIDNacionalidad.SelectedIndex = -1;
@@ -64,7 +64,7 @@ namespace Ejercicio_1.Controles
                 {
                     if (cmbIDNacionalidad.SelectedValue == null) throw new Exception("La ID es inválida o no ha sido seleccionada");
                     int id = (int)cmbIDNacionalidad.SelectedValue;
-                    fa = new BLL.Nacionalidad().EditarPersona(id, nombre);
+                    fa = new BLL.Nacionalidad().EditarNacionalidad(id, nombre);
                     ActualizarControles();
                     cmbIDNacionalidad.SelectedItem = cmbIDNacionalidad.Items.Cast<BE.Nacionalidad>().FirstOrDefault(p => p.IdNacionalidad == id);
                 }
@@ -83,7 +83,7 @@ namespace Ejercicio_1.Controles
                 int fa = 0;
                 DialogResult result = MessageBox.Show($"¿Está seguro de eliminar a {p.Nombre}? Esta acción no se puede deshacer", "Confirmación", MessageBoxButtons.OKCancel);
 
-                if (result == DialogResult.OK) fa = new BLL.Nacionalidad().RemoverProfesion(p.IdNacionalidad);
+                if (result == DialogResult.OK) fa = new BLL.Nacionalidad().RemoverNacionalidad(p.IdNacionalidad);
                 else MessageBox.Show("Operación cancelada");
 
                 if (fa != 0) MessageBox.Show($"Se ha eliminado a {p.Nombre}.");

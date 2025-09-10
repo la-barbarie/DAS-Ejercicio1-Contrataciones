@@ -26,16 +26,7 @@ namespace BLL
             }
             catch (Exception e) { throw e; }
         }
-
-        // Elimina una profesion por id
-        public int RemoverProfesion(int numero)
-        {
-            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
-            return mp.Delete(numero);
-        }
-
-        // Edita el nombre de una profesion existente
-        public int EditarPersona(int id, string nombre)
+        public int EditarProfesion(int id, string nombre)
         {
             try
             {
@@ -57,21 +48,9 @@ namespace BLL
             }
             catch (Exception e) { throw e; }
         }
-
-        // Busca una profesion por id
-        public BE.Profesion GetById(int id)
-        {
-            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
-            return mp.FindById(id);
-        }
-
-        // Lista todas las profesiones registradas
-        public List<BE.Profesion> ListarPersonas()
-        {
-            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
-            return mp.GetAll();
-        }
-
+        public int RemoverProfesion(int numero) => new DAL.mapper.MapperTipoProfesion().Delete(numero);
+        public BE.Profesion GetById(int id) => new DAL.mapper.MapperTipoProfesion().FindById(id);
+        public List<BE.Profesion> ListarProfesiones() => new DAL.mapper.MapperTipoProfesion().GetAll();
     }
 }
 
