@@ -26,7 +26,7 @@ namespace Ejercicio_1.Controles
             BLL.Nacionalidad NacionalidadBLL = new BLL.Nacionalidad();
 
             cmbNroPersona.DataSource = PersonaBLL.ListarPersonas();
-            cmbNroPersona.DisplayMember = "Nombre";
+            cmbNroPersona.DisplayMember = "NumeroPersona";
             cmbNroPersona.SelectedIndex = -1;
 
             foreach (TextBox tx in tbpResumenPersona.Controls.OfType<TextBox>()) tx.Text = "";

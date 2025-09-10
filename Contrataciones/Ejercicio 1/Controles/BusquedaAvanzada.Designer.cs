@@ -30,8 +30,6 @@
         {
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.txbApellido = new System.Windows.Forms.TextBox();
-            this.nupEdMin = new System.Windows.Forms.DomainUpDown();
-            this.nupEdMax = new System.Windows.Forms.DomainUpDown();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.cmbNac = new System.Windows.Forms.ComboBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
@@ -44,7 +42,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbProf = new System.Windows.Forms.ComboBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.nupEdMin = new System.Windows.Forms.NumericUpDown();
+            this.nupEdMax = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupEdMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupEdMax)).BeginInit();
             this.SuspendLayout();
             // 
             // txbNombre
@@ -53,7 +55,6 @@
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(120, 20);
             this.txbNombre.TabIndex = 0;
-            this.txbNombre.TextChanged += new System.EventHandler(this.ActualizarInfo);
             // 
             // txbApellido
             // 
@@ -61,38 +62,19 @@
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(120, 20);
             this.txbApellido.TabIndex = 1;
-            this.txbApellido.TextChanged += new System.EventHandler(this.ActualizarInfo);
-            // 
-            // nupEdMin
-            // 
-            this.nupEdMin.Location = new System.Drawing.Point(264, 30);
-            this.nupEdMin.Name = "nupEdMin";
-            this.nupEdMin.Size = new System.Drawing.Size(60, 20);
-            this.nupEdMin.TabIndex = 2;
-            this.nupEdMin.Text = "domainUpDown1";
-            this.nupEdMin.TextChanged += new System.EventHandler(this.ActualizarInfo);
-            // 
-            // nupEdMax
-            // 
-            this.nupEdMax.Location = new System.Drawing.Point(330, 30);
-            this.nupEdMax.Name = "nupEdMax";
-            this.nupEdMax.Size = new System.Drawing.Size(60, 20);
-            this.nupEdMax.TabIndex = 3;
-            this.nupEdMax.Text = "domainUpDown2";
-            this.nupEdMax.TextChanged += new System.EventHandler(this.ActualizarInfo);
             // 
             // cmbSexo
             // 
             this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
+            "",
             "Femenino",
             "Masculino"});
             this.cmbSexo.Location = new System.Drawing.Point(396, 30);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(120, 21);
             this.cmbSexo.TabIndex = 4;
-            this.cmbSexo.TextChanged += new System.EventHandler(this.ActualizarInfo);
             // 
             // cmbNac
             // 
@@ -102,7 +84,6 @@
             this.cmbNac.Name = "cmbNac";
             this.cmbNac.Size = new System.Drawing.Size(120, 21);
             this.cmbNac.TabIndex = 5;
-            this.cmbNac.TextChanged += new System.EventHandler(this.ActualizarInfo);
             // 
             // dgvDatos
             // 
@@ -186,7 +167,6 @@
             this.cmbProf.Name = "cmbProf";
             this.cmbProf.Size = new System.Drawing.Size(120, 21);
             this.cmbProf.TabIndex = 6;
-            this.cmbProf.TextChanged += new System.EventHandler(this.ActualizarInfo);
             // 
             // btnFiltrar
             // 
@@ -196,12 +176,29 @@
             this.btnFiltrar.TabIndex = 8;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // nupEdMin
+            // 
+            this.nupEdMin.Location = new System.Drawing.Point(264, 30);
+            this.nupEdMin.Name = "nupEdMin";
+            this.nupEdMin.Size = new System.Drawing.Size(60, 20);
+            this.nupEdMin.TabIndex = 16;
+            // 
+            // nupEdMax
+            // 
+            this.nupEdMax.Location = new System.Drawing.Point(330, 30);
+            this.nupEdMax.Name = "nupEdMax";
+            this.nupEdMax.Size = new System.Drawing.Size(60, 20);
+            this.nupEdMax.TabIndex = 16;
             // 
             // BusquedaAvanzada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 450);
+            this.Controls.Add(this.nupEdMax);
+            this.Controls.Add(this.nupEdMin);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -214,14 +211,14 @@
             this.Controls.Add(this.cmbProf);
             this.Controls.Add(this.cmbNac);
             this.Controls.Add(this.cmbSexo);
-            this.Controls.Add(this.nupEdMax);
-            this.Controls.Add(this.nupEdMin);
             this.Controls.Add(this.txbApellido);
             this.Controls.Add(this.txbNombre);
             this.Name = "BusquedaAvanzada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busqueda Avanzada";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupEdMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupEdMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,8 +228,6 @@
 
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.TextBox txbApellido;
-        private System.Windows.Forms.DomainUpDown nupEdMin;
-        private System.Windows.Forms.DomainUpDown nupEdMax;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.ComboBox cmbNac;
         private System.Windows.Forms.DataGridView dgvDatos;
@@ -245,5 +240,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbProf;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.NumericUpDown nupEdMin;
+        private System.Windows.Forms.NumericUpDown nupEdMax;
     }
 }
