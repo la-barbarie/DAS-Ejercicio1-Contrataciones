@@ -63,6 +63,7 @@
             this.txbEdadMinGral = new System.Windows.Forms.TextBox();
             this.txbEdadAvgGral = new System.Windows.Forms.TextBox();
             this.txbEdadMaxGral = new System.Windows.Forms.TextBox();
+            this.bntBusqAvanz = new System.Windows.Forms.Button();
             this.tbcResumenPersona.SuspendLayout();
             this.tbpResumenPersona.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             // tbpResumenPersona
             // 
+            this.tbpResumenPersona.Controls.Add(this.bntBusqAvanz);
             this.tbpResumenPersona.Controls.Add(this.txbProfesion);
             this.tbpResumenPersona.Controls.Add(this.txbNacionalidad);
             this.tbpResumenPersona.Controls.Add(this.txbSexo);
@@ -409,6 +411,16 @@
             this.txbEdadMaxGral.Size = new System.Drawing.Size(60, 20);
             this.txbEdadMaxGral.TabIndex = 41;
             // 
+            // bntBusqAvanz
+            // 
+            this.bntBusqAvanz.Location = new System.Drawing.Point(28, 242);
+            this.bntBusqAvanz.Name = "bntBusqAvanz";
+            this.bntBusqAvanz.Size = new System.Drawing.Size(189, 20);
+            this.bntBusqAvanz.TabIndex = 51;
+            this.bntBusqAvanz.Text = "Búsqueda avanzada";
+            this.bntBusqAvanz.UseVisualStyleBackColor = true;
+            this.bntBusqAvanz.Click += new System.EventHandler(this.bntBusqAvanz_Click);
+            // 
             // Resumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,5 +479,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button bntBusqAvanz;
     }
 }

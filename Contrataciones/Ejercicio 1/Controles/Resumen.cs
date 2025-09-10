@@ -69,5 +69,13 @@ namespace Ejercicio_1.Controles
             txbAvgEdadSelec.Text = new BLL.Personas().GetPromedioEdadPorNacionalidad(n.IdNacionalidad).ToString();
             txbCantPerSelec.Text = new BLL.Personas().GetCantidadPersonasPorNacionalidad(n.IdNacionalidad).ToString();
         }
+
+        private void bntBusqAvanz_Click(object sender, EventArgs e)
+        {
+            FindForm().Visible = false;
+            Form BusquedaAv = new BusquedaAvanzada();
+            BusquedaAv.ShowDialog();
+            FindForm().Visible = true;
+        }
     }
 }
