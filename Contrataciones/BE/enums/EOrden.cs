@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BE.enums
 {
-    internal enum EOrden
+    public enum EOrden
     {
-        MAX,
-        MIN
+        MIN,
+        MAX
     }
 }

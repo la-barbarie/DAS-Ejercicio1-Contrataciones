@@ -97,6 +97,11 @@ namespace DAL.mapper
 
         public int GetPromedioEdad() => (int)connection.Scalar("sp_calculateAvergaeAge", null);
 
+        /// <summary>
+        /// Se busca el mínimo o máximo de edad de todas las personas
+        /// </summary>
+        /// <param name="orden">EOrden.MAX para mayor cantidad, EOrden.MIN para menor cantidad.</param>
+        /// <returns>Entero</returns>
         public int GetMinOrMaxAge(int orden)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -133,6 +138,29 @@ namespace DAL.mapper
             return personasAgrupadas;
         }
 
+        public List<PersonasNacionalidadDTO> GetCantidadPersonasPorNacionalidad(int idNacionalidad)
+        {
+            List<PersonasNacionalidadDTO> personasAgrupadas = new List<PersonasNacionalidadDTO>();
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@id_nacionalidad", idNacionalidad }
+            };
+            DataTable dataTable = connection.Read("sp_getPersonasAgrupadasPorNacionalidad", ParameterUtils.BuildParameters(parameters));
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                PersonasNacionalidadDTO dto = new PersonasNacionalidadDTO
+                {
+                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
+                    CantidadPersonas = (int)row["CantidadPersonas"]
+                };
+                personasAgrupadas.Add(dto);
+            }
+
+            return personasAgrupadas;
+        }
+
         public List<PromedioEdadNacionalidadDTO> GetPromedioEdadPorNacionalidad()
         {
             List<PromedioEdadNacionalidadDTO> promedios = new List<PromedioEdadNacionalidadDTO>();
@@ -150,6 +178,29 @@ namespace DAL.mapper
                 {
                     Nacionalidad = nacionalidad,
                     PromedioEdad = (int)row["promedio_edad"]
+                };
+                promedios.Add(dto);
+            }
+
+            return promedios;
+        }
+
+        public List<PromedioEdadNacionalidadDTO> GetPromedioEdadPorNacionalidad(int idNacionalidad)
+        {
+            List<PromedioEdadNacionalidadDTO> promedios = new List<PromedioEdadNacionalidadDTO>();
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@id_nacionalidad", idNacionalidad }
+            };
+            DataTable dataTable = connection.Read("sp_getPromedioEdadPorNacionalidad", ParameterUtils.BuildParameters(parameters));
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                PromedioEdadNacionalidadDTO dto = new PromedioEdadNacionalidadDTO
+                {
+                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
+                    PromedioEdad = (int)row["PromedioEdad"]
                 };
                 promedios.Add(dto);
             }
