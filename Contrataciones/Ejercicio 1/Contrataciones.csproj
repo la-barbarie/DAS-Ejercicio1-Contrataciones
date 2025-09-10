@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\BusquedaAvanzada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\BusquedaAvanzada.Designer.cs">
+      <DependentUpon>BusquedaAvanzada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Nacionalidad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controles\BusquedaAvanzada.resx">
+      <DependentUpon>BusquedaAvanzada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Nacionalidad.resx">
       <DependentUpon>Nacionalidad.cs</DependentUpon>
     </EmbeddedResource>
