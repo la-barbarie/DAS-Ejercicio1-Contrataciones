@@ -34,42 +34,6 @@ namespace Ejercicio_1.Controles
             btnEliminar.Visible = editar;
 
             if (editar) camposActivos(false);
-
-            /*
-            if (editar)
-            {
-                gbxGrupo.Text = "Modificar - Persona";
-
-                cmbNroPersona.Enabled = true;
-                cmbNroPersona.Visible = true;
-
-                txbNroPersona.Enabled = false;
-                txbNroPersona.Visible = false;
-
-                btnAceptar.Text = "Modificar";
-                btnAceptar.Enabled = false;
-
-                btnEliminar.Enabled = false;
-                btnEliminar.Visible = true;
-
-                camposActivos(false);
-            }
-            else
-            {
-                gbxGrupo.Text = "Agregar - Persona";
-
-                cmbNroPersona.Enabled = false;
-                cmbNroPersona.Visible = false;
-
-                txbNroPersona.Enabled = true;
-                txbNroPersona.Visible = true;
-
-                btnAceptar.Text = "Agregar";
-
-                btnEliminar.Enabled = false;
-                btnEliminar.Visible = false;
-            }
-            */
         }
 
         private void ActualizarControles()

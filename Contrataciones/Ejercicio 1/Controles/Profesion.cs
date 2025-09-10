@@ -33,43 +33,6 @@ namespace Ejercicio_1.Controles
             btnEliminar.Visible = editar;
 
             if (editar) camposActivos(false);
-            /*
-            if (editar)
-            {
-                gbxGrupo.Text = "Modificar - Profesión";
-
-                cmbIDProfesion.Enabled = true;
-                cmbIDProfesion.Visible = true;
-
-                txbIDProfesion.Enabled = false;
-                txbIDProfesion.Visible = false;
-
-                btnAceptar.Text = "Modificar";
-
-                btnAceptar.Enabled = false;
-                btnAceptar.Visible = true;
-
-                btnEliminar.Enabled = false;
-                btnEliminar.Visible = true;
-
-                camposActivos(false);
-            }
-            else
-            {
-                gbxGrupo.Text = "Agregar - Profesión";
-
-                cmbIDProfesion.Enabled = false;
-                cmbIDProfesion.Visible = false;
-
-                txbIDProfesion.Enabled = true;
-                txbIDProfesion.Visible = true;
-
-                btnAceptar.Text = "Agregar";
-
-                btnEliminar.Enabled = false;
-                btnEliminar.Visible = false;
-            }
-            */
         }
 
         private void camposActivos(bool activo)

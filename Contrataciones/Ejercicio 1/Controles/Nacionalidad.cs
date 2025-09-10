@@ -33,44 +33,6 @@ namespace Ejercicio_1.Controles
             btnEliminar.Visible = editar;
 
             if (editar) camposActivos(false);
-            
-            /*
-            if (editar)
-            {
-                gbxGrupo.Text = "Modificar - Nacionalidad";
-
-                cmbIDNacionalidad.Enabled = true;
-                cmbIDNacionalidad.Visible = true;
-
-                txbIDNacionalidad.Enabled = false;
-                txbIDNacionalidad.Visible = false;
-
-                btnAceptar.Text = "Modificar";
-
-                btnAceptar.Enabled = false;
-                btnAceptar.Visible = true;
-
-                btnEliminar.Enabled = false;
-                btnEliminar.Visible = true;
-
-                camposActivos(false);
-            }
-            else
-            {
-                gbxGrupo.Text = "Agregar - Nacionalidad";
-
-                cmbIDNacionalidad.Enabled = false;
-                cmbIDNacionalidad.Visible = false;
-
-                txbIDNacionalidad.Enabled = true;
-                txbIDNacionalidad.Visible = true;
-
-                btnAceptar.Text = "Agregar";
-
-                btnEliminar.Enabled = false;
-                btnEliminar.Visible = false;
-            }
-            */
         }
 
         private void ActualizarControles()
