@@ -44,6 +44,7 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.nupEdMin = new System.Windows.Forms.NumericUpDown();
             this.nupEdMax = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdMax)).BeginInit();
@@ -89,11 +90,13 @@
             // 
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeColumns = false;
+            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Location = new System.Drawing.Point(12, 56);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(756, 353);
+            this.dgvDatos.Size = new System.Drawing.Size(756, 362);
             this.dgvDatos.TabIndex = 7;
             // 
             // label1
@@ -170,7 +173,7 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(12, 415);
+            this.btnFiltrar.Location = new System.Drawing.Point(12, 424);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(756, 23);
             this.btnFiltrar.TabIndex = 8;
@@ -192,11 +195,22 @@
             this.nupEdMax.Size = new System.Drawing.Size(60, 20);
             this.nupEdMax.TabIndex = 16;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(756, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Limpiar Filtros";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BusquedaAvanzada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 450);
+            this.ClientSize = new System.Drawing.Size(780, 488);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.nupEdMax);
             this.Controls.Add(this.nupEdMin);
             this.Controls.Add(this.btnFiltrar);
@@ -242,5 +256,6 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.NumericUpDown nupEdMin;
         private System.Windows.Forms.NumericUpDown nupEdMax;
+        private System.Windows.Forms.Button button1;
     }
 }

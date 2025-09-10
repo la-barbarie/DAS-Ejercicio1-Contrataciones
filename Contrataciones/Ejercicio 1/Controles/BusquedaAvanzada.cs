@@ -22,7 +22,7 @@ namespace Ejercicio_1.Controles
             cmbNac.DisplayMember = "Nombre";
             cmbProf.DataSource = new BLL.Profesion().ListarPersonas();
             cmbProf.DisplayMember = "Nombre";
-            foreach (ComboBox cm in Controls.OfType<ComboBox>()) cm.SelectedIndex = -1;
+            LimpiarFiltros();
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -52,6 +52,19 @@ namespace Ejercicio_1.Controles
 
                 dgvDatos.DataSource = new BLL.Personas().ObtenerPersonasPorFiltros(filtro);
             } catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LimpiarFiltros();
+        }
+        private void LimpiarFiltros()
+        {
+            foreach (TextBox tx in Controls.OfType<TextBox>()) tx.Text = "";
+            foreach (ComboBox cm in Controls.OfType<ComboBox>()) cm.SelectedIndex = -1;
+            nupEdMin.Value = 0;
+            nupEdMax.Value = 100;
+            dgvDatos.DataSource = new BLL.Personas().ObtenerPersonasPorFiltros(new FiltrosDTO());
         }
     }
 }
