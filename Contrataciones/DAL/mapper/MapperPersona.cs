@@ -1,5 +1,6 @@
 ﻿using BE;
 using BE.dto;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -36,26 +37,24 @@ namespace DAL.mapper
 
         public Persona FindById(int id)
         {
-            Persona persona = null;
-            DataTable dataTable = connection.Read("sp_getPersonaById", null);
-
-            DataRow dataRow = dataTable.AsEnumerable().FirstOrDefault(r => (int)r["numero_persona"] == id);
-
-            if (dataRow != null)
+            Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                persona = new Persona
-                {
-                    NumeroPersona = (int)dataRow["numero_persona"],
-                    Nombre = dataRow["nombre"].ToString(),
-                    Apellido = dataRow["apellido"].ToString(),
-                    Edad = (int)dataRow["edad"],
-                    Sexo = (bool)dataRow["sexo"],
-                    Nacionalidad = (int)dataRow["nacionalidad"],
-                    Profesion = (int)dataRow["profesion"]
-                };
-            }
+                { "@numero_persona", id }
+            };
 
-            return persona;
+            DataTable dataTable = connection.Read("sp_getPersonaById", ParameterUtils.BuildParameters(parameters));
+            DataRow dataRow = dataTable.Rows.Cast<DataRow>().FirstOrDefault() ?? throw new Exception("No se encontró la persona con el ID proporcionado.");
+
+            return new Persona
+            {
+                NumeroPersona = (int)dataRow["numero_persona"],
+                Nombre = dataRow["nombre"].ToString(),
+                Apellido = dataRow["apellido"].ToString(),
+                Edad = (int)dataRow["edad"],
+                Sexo = (bool)dataRow["sexo"],
+                Nacionalidad = (int)dataRow["nacionalidad"],
+                Profesion = (int)dataRow["profesion"]
+            };
         }
 
         public int Insert(Persona persona)
