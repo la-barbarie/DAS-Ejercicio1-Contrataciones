@@ -244,9 +244,9 @@ namespace DAL.mapper
                     Nombre = row["nombre"].ToString(),
                     Apellido = row["apellido"].ToString(),
                     Edad = (int)row["edad"],
-                    Sexo = (bool)row["sexo"],
-                    Nacionalidad = row["nacionalidad"].ToString(),
-                    Profesion = row["profesion"].ToString()
+                    Sexo = row["sexo"].ToString(),
+                    Nacionalidad = row["nombre_nacionalidad"].ToString(),
+                    Profesion = row["nombre_profesion"].ToString()
                 };
 
                 promedios.Add(personaFiltrada);

@@ -139,7 +139,7 @@ namespace BLL
             //medio nefasto pero veremos si funciona
         }
 
-        public List<Persona> ObtenerPersonasPorFiltros(FiltrosDTO filtros)
+        public List<PersonaFiltrada> ObtenerPersonasPorFiltros(FiltrosDTO filtros)
         {
             MapperPersona mapper = new MapperPersona();
             return mapper.GetPersonasFiltradas(filtros);

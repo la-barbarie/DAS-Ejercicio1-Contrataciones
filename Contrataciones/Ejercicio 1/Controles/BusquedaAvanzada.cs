@@ -18,10 +18,16 @@ namespace Ejercicio_1.Controles
         {
             InitializeComponent();
 
-            cmbNac.DataSource = new BLL.Nacionalidad().ListarPersonas();
+            List<BE.Nacionalidad> nacionalidades = new BLL.Nacionalidad().ListarPersonas();
+            nacionalidades.Insert(0, new BE.Nacionalidad());
+            cmbNac.DataSource = nacionalidades;
             cmbNac.DisplayMember = "Nombre";
-            cmbProf.DataSource = new BLL.Profesion().ListarPersonas();
+
+            List<BE.Profesion> profesiones = new BLL.Profesion().ListarPersonas();
+            profesiones.Insert(0, new BE.Profesion());
+            cmbProf.DataSource = profesiones;
             cmbProf.DisplayMember = "Nombre";
+
             LimpiarFiltros();
         }
 
@@ -47,11 +53,14 @@ namespace Ejercicio_1.Controles
                         filtro.Sexo = null;
                         break;
                 }
-                filtro.Nacionalidad = cmbNac.SelectedIndex != -1 ? ((BE.Nacionalidad)cmbNac.SelectedItem).IdNacionalidad : -1;
-                filtro.Profesion = cmbProf.SelectedIndex != -1 ? ((BE.Profesion)cmbProf.SelectedItem).IdProfesion : -1;
+                filtro.Nacionalidad = cmbNac.Text != "" ? ((BE.Nacionalidad)cmbNac.SelectedItem).IdNacionalidad : -1;
+                filtro.Profesion = cmbProf.Text != "" ? ((BE.Profesion)cmbProf.SelectedItem).IdProfesion : -1;
 
                 dgvDatos.DataSource = new BLL.Personas().ObtenerPersonasPorFiltros(filtro);
-            } catch (Exception ex) { MessageBox.Show(ex.Message); }
+                dgvDatos.Columns["NumeroPersona"].HeaderText = "Num. Persona";
+                dgvDatos.Columns["Profesion"].HeaderText = "Profesión";
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,6 +74,8 @@ namespace Ejercicio_1.Controles
             nupEdMin.Value = 0;
             nupEdMax.Value = 100;
             dgvDatos.DataSource = new BLL.Personas().ObtenerPersonasPorFiltros(new FiltrosDTO());
+            dgvDatos.Columns["NumeroPersona"].HeaderText = "Num. Persona";
+            dgvDatos.Columns["Profesion"].HeaderText = "Profesión";
         }
     }
 }
