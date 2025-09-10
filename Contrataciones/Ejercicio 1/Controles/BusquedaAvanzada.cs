@@ -18,7 +18,7 @@ namespace Ejercicio_1.Controles
         {
             InitializeComponent();
 
-            List<BE.Nacionalidad> nacionalidades = new BLL.Nacionalidad().ListarPersonas();
+            List<BE.Nacionalidad> nacionalidades = new BLL.Nacionalidad().ListarNacionalidades();
             nacionalidades.Insert(0, new BE.Nacionalidad());
             cmbNac.DataSource = nacionalidades;
             cmbNac.DisplayMember = "Nombre";

@@ -28,13 +28,13 @@ namespace BLL
 
         }
 
-        public int RemoverProfesion(int numero)
+        public int RemoverNacionalidad(int numero)
         {
             DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
             return mp.Delete(numero);
         }
 
-        public int EditarPersona(int id, string nombre)
+        public int EditarNacionalidad(int id, string nombre)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace BLL
             return mp.FindById(id);
         }
 
-        public List<BE.Nacionalidad> ListarPersonas()
+        public List<BE.Nacionalidad> ListarNacionalidades()
         {
             DAL.mapper.MapperNacionalidad mp = new DAL.mapper.MapperNacionalidad();
             return mp.GetAll();

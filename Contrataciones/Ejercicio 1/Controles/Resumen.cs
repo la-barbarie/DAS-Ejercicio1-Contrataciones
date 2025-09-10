@@ -39,7 +39,7 @@ namespace Ejercicio_1.Controles
             txbNacMenosCant.Text = NacionalidadBLL.GetMinPersonasRegistradas().Nacionalidad.Nombre;
             txbNacMasCant.Text = NacionalidadBLL.GetMaxPersonasRegistradas().Nacionalidad.Nombre;
 
-            cmbSelectNac.DataSource = NacionalidadBLL.ListarPersonas();
+            cmbSelectNac.DataSource = NacionalidadBLL.ListarNacionalidades();
             cmbSelectNac.DisplayMember = "Nombre";
             cmbSelectNac.SelectedIndex = -1;
 

@@ -44,7 +44,7 @@ namespace Ejercicio_1.Controles
 
             cmbSexo.SelectedIndex = -1;
 
-            cmbNacionalidad.DataSource = new BLL.Nacionalidad().ListarPersonas();
+            cmbNacionalidad.DataSource = new BLL.Nacionalidad().ListarNacionalidades();
             cmbNacionalidad.DisplayMember = "Nombre";
             cmbNacionalidad.SelectedIndex = -1;
 
