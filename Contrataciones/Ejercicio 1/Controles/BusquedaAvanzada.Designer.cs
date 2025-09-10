@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbProf = new System.Windows.Forms.ComboBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,8 +112,8 @@
             this.dgvDatos.Location = new System.Drawing.Point(12, 56);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(756, 374);
-            this.dgvDatos.TabIndex = 6;
+            this.dgvDatos.Size = new System.Drawing.Size(756, 353);
+            this.dgvDatos.TabIndex = 7;
             // 
             // label1
             // 
@@ -120,7 +121,7 @@
             this.label1.Location = new System.Drawing.Point(50, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Nombre";
             // 
             // label2
@@ -129,7 +130,7 @@
             this.label2.Location = new System.Drawing.Point(176, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Apellido";
             // 
             // label3
@@ -138,7 +139,7 @@
             this.label3.Location = new System.Drawing.Point(264, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 11;
             this.label3.Text = "Edad mín.";
             // 
             // label4
@@ -147,7 +148,7 @@
             this.label4.Location = new System.Drawing.Point(330, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 12;
             this.label4.Text = "Edad max.";
             // 
             // label5
@@ -156,7 +157,7 @@
             this.label5.Location = new System.Drawing.Point(441, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 7;
+            this.label5.TabIndex = 13;
             this.label5.Text = "Sexo";
             // 
             // label6
@@ -165,7 +166,7 @@
             this.label6.Location = new System.Drawing.Point(548, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
-            this.label6.TabIndex = 7;
+            this.label6.TabIndex = 14;
             this.label6.Text = "Nacionalidad";
             // 
             // label7
@@ -174,7 +175,7 @@
             this.label7.Location = new System.Drawing.Point(683, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 7;
+            this.label7.TabIndex = 15;
             this.label7.Text = "Profesión";
             // 
             // cmbProf
@@ -184,14 +185,24 @@
             this.cmbProf.Location = new System.Drawing.Point(648, 30);
             this.cmbProf.Name = "cmbProf";
             this.cmbProf.Size = new System.Drawing.Size(120, 21);
-            this.cmbProf.TabIndex = 5;
+            this.cmbProf.TabIndex = 6;
             this.cmbProf.TextChanged += new System.EventHandler(this.ActualizarInfo);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(12, 415);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(756, 23);
+            this.btnFiltrar.TabIndex = 8;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
             // BusquedaAvanzada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 450);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -233,5 +244,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbProf;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }
