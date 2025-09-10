@@ -20,9 +20,23 @@ namespace Ejercicio_1.Controles
             InitializeComponent();
             ActualizarControles();
 
+            gbxGrupo.Text = editar ? "Modificar - Profesión" : "Agregar - Profesión";
+
+            cmbIDProfesion.Enabled = cmbIDProfesion.Visible = editar;
+            txbIDProfesion.Enabled = txbIDProfesion.Visible = !editar;
+
+            btnAceptar.Text = editar ? "Modificar" : "Agregar";
+            btnAceptar.Enabled = editar ? false : true;
+            btnAceptar.Visible = true;
+
+            btnEliminar.Enabled = false;
+            btnEliminar.Visible = editar;
+
+            if (editar) camposActivos(false);
+            /*
             if (editar)
             {
-                gbxGrupo.Text = "Panel - Modificar";
+                gbxGrupo.Text = "Modificar - Profesión";
 
                 cmbIDProfesion.Enabled = true;
                 cmbIDProfesion.Visible = true;
@@ -42,7 +56,7 @@ namespace Ejercicio_1.Controles
             }
             else
             {
-                gbxGrupo.Text = "Panel - Agregar";
+                gbxGrupo.Text = "Agregar - Profesión";
 
                 cmbIDProfesion.Enabled = false;
                 cmbIDProfesion.Visible = false;
@@ -55,6 +69,7 @@ namespace Ejercicio_1.Controles
                 btnEliminar.Enabled = false;
                 btnEliminar.Visible = false;
             }
+            */
         }
 
         private void camposActivos(bool activo)

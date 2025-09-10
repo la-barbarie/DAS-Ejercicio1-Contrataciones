@@ -20,9 +20,24 @@ namespace Ejercicio_1.Controles
             InitializeComponent();
             ActualizarControles();
 
+            gbxGrupo.Text = editar ? "Modificar - Nacionalidad" : "Agregar - Nacionalidad";
+
+            cmbIDNacionalidad.Enabled = cmbIDNacionalidad.Visible = editar;
+            txbIDNacionalidad.Enabled = txbIDNacionalidad.Visible = !editar;
+
+            btnAceptar.Text = editar ? "Modificar" : "Agregar";
+            btnAceptar.Enabled = editar ? false : true;
+            btnAceptar.Visible = true;
+
+            btnEliminar.Enabled = false;
+            btnEliminar.Visible = editar;
+
+            if (editar) camposActivos(false);
+            
+            /*
             if (editar)
             {
-                gbxGrupo.Text = "Panel - Modificar";
+                gbxGrupo.Text = "Modificar - Nacionalidad";
 
                 cmbIDNacionalidad.Enabled = true;
                 cmbIDNacionalidad.Visible = true;
@@ -42,7 +57,7 @@ namespace Ejercicio_1.Controles
             }
             else
             {
-                gbxGrupo.Text = "Panel - Agregar";
+                gbxGrupo.Text = "Agregar - Nacionalidad";
 
                 cmbIDNacionalidad.Enabled = false;
                 cmbIDNacionalidad.Visible = false;
@@ -55,6 +70,7 @@ namespace Ejercicio_1.Controles
                 btnEliminar.Enabled = false;
                 btnEliminar.Visible = false;
             }
+            */
         }
 
         private void ActualizarControles()

@@ -16,6 +16,8 @@ namespace Ejercicio_1.Controles
         {
             InitializeComponent();
             ActualizarDatos();
+            
+            cmbSelectNac.SelectedItem = cmbSelectNac.Items.Cast<BE.Nacionalidad>().FirstOrDefault(n => n.Nombre == txbNacMasCant.Text);
         }
 
         private void ActualizarDatos()
