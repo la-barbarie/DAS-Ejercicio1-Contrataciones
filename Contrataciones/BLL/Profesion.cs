@@ -26,13 +26,6 @@ namespace BLL
             catch (Exception e) { throw e; }
 
         }
-
-        public int RemoverProfesion(int numero)
-        {
-            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
-            return mp.Delete(numero);
-        }
-
         public int EditarProfesion(int id, string nombre)
         {
             try
@@ -52,19 +45,9 @@ namespace BLL
             }
             catch (Exception e) { throw e; }
         }
-
-        public BE.Profesion GetById(int id)
-        {
-            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
-            return mp.FindById(id);
-        }
-
-        public List<BE.Profesion> ListarProfesiones()
-        {
-            DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
-            return mp.GetAll();
-        }
-
+        public int RemoverProfesion(int numero) => new DAL.mapper.MapperTipoProfesion().Delete(numero);
+        public BE.Profesion GetById(int id) => new DAL.mapper.MapperTipoProfesion().FindById(id);
+        public List<BE.Profesion> ListarProfesiones() => new DAL.mapper.MapperTipoProfesion().GetAll();
     }
 }
 
