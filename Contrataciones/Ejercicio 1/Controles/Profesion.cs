@@ -42,7 +42,7 @@ namespace Ejercicio_1.Controles
 
         private void ActualizarControles()
         {
-            cmbIDProfesion.DataSource = new BLL.Profesion().ListarPersonas();
+            cmbIDProfesion.DataSource = new BLL.Profesion().ListarProfesiones();
             cmbIDProfesion.DisplayMember = "Nombre";
             cmbIDProfesion.ValueMember = "IdProfesion";
             cmbIDProfesion.SelectedIndex = -1;
@@ -69,7 +69,7 @@ namespace Ejercicio_1.Controles
                 {
                     if (cmbIDProfesion.SelectedValue == null) throw new Exception("La ID es inválida o no ha sido seleccionada");
                     int id = (int)cmbIDProfesion.SelectedValue;
-                    fa = new BLL.Profesion().EditarPersona(id, nombre);
+                    fa = new BLL.Profesion().EditarProfesion(id, nombre);
                     ActualizarControles();
                     cmbIDProfesion.SelectedItem = cmbIDProfesion.Items.Cast<BE.Profesion>().FirstOrDefault(p => p.IdProfesion == id);
                 }

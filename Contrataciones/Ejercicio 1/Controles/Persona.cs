@@ -48,7 +48,7 @@ namespace Ejercicio_1.Controles
             cmbNacionalidad.DisplayMember = "Nombre";
             cmbNacionalidad.SelectedIndex = -1;
 
-            cmbProfesion.DataSource = new BLL.Profesion().ListarPersonas();
+            cmbProfesion.DataSource = new BLL.Profesion().ListarProfesiones();
             cmbProfesion.DisplayMember = "Nombre";
             cmbProfesion.SelectedIndex = -1;
 

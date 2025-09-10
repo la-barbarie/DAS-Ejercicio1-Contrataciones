@@ -33,7 +33,7 @@ namespace BLL
             return mp.Delete(numero);
         }
 
-        public int EditarPersona(int id, string nombre)
+        public int EditarProfesion(int id, string nombre)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace BLL
             return mp.FindById(id);
         }
 
-        public List<BE.Profesion> ListarPersonas()
+        public List<BE.Profesion> ListarProfesiones()
         {
             DAL.mapper.MapperTipoProfesion mp = new DAL.mapper.MapperTipoProfesion();
             return mp.GetAll();
