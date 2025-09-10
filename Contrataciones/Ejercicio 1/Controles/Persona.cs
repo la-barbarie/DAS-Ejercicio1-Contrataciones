@@ -19,7 +19,8 @@ namespace Ejercicio_1.Controles
         {
             btnEditar = editar;
             InitializeComponent();
-
+            ActualizarControles();
+            
             if (editar)
             {
                 gbxGrupo.Text = "Panel - Modificar";
@@ -31,6 +32,12 @@ namespace Ejercicio_1.Controles
                 txbNroPersona.Visible = false;
 
                 btnAceptar.Text = "Modificar";
+                btnAceptar.Enabled = false;
+
+                btnEliminar.Enabled = false;
+                btnEliminar.Visible = true;
+
+                camposActivos(false);
             }
             else
             {
@@ -43,9 +50,10 @@ namespace Ejercicio_1.Controles
                 txbNroPersona.Visible = true;
 
                 btnAceptar.Text = "Agregar";
-            }
 
-            ActualizarControles();
+                btnEliminar.Enabled = false;
+                btnEliminar.Visible = false;
+            }
         }
 
         private void ActualizarControles()
@@ -89,19 +97,73 @@ namespace Ejercicio_1.Controles
                 if (cmbNacionalidad.SelectedValue == null) throw new Exception("La nacionalidad es inválida o no ha sido seleccionada");
                 if (cmbProfesion.SelectedValue == null) throw new Exception("La profesion es inválida o no ha sido seleccionada");
 
-                if (!btnEditar) fa = new BLL.Personas().InsertarPersona(nombre, apellido, edad, sexo, nacionalidad, profesion);
+                if (!btnEditar)
+                {
+                    fa = new BLL.Personas().InsertarPersona(nombre, apellido, edad, sexo, nacionalidad, profesion);
+                    ActualizarControles();
+                }
                 else
                 {
                     if (cmbNroPersona.SelectedValue == null) throw new Exception("La Persona seleccionada es inválida o no ha sido seleccionada");
-                    int id = (int)cmbNroPersona.SelectedValue;
+                    int id = ((BE.Persona)cmbNroPersona.SelectedValue).NumeroPersona;
                     fa = new BLL.Personas().EditarPersona(id, nombre, apellido, edad, sexo, nacionalidad, profesion);
+                    ActualizarControles();
+                    cmbNroPersona.SelectedItem = cmbNroPersona.Items.Cast<BE.Persona>().FirstOrDefault(p => p.NumeroPersona == id);
                 }
 
                 if (fa != 0) MessageBox.Show("Se ha cargado la información satisfactoriamente");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
+        }
+
+        private void cmbNroPersona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbNroPersona.SelectedValue == null) return;
+
+            BE.Persona p = (BE.Persona)cmbNroPersona.SelectedValue;
+            txbNombre.Text = p.Nombre;
+            txbApellido.Text = p.Apellido;
+            nupEdad.Value = p.Edad;
+            if (p.Sexo == false) cmbSexo.SelectedIndex = 0;
+            else cmbSexo.SelectedIndex = 1;
+            cmbNacionalidad.SelectedItem = cmbNacionalidad.Items.Cast<BE.Nacionalidad>().FirstOrDefault(n => n.IdNacionalidad == p.Nacionalidad);
+            cmbProfesion.SelectedItem = cmbProfesion.Items.Cast<BE.Profesion>().FirstOrDefault(prof => prof.IdProfesion == p.Profesion);
+
+            camposActivos(true);
+            btnAceptar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        private void camposActivos(bool activo)
+        {
+            txbNombre.Enabled = activo;
+            txbApellido.Enabled = activo;
+            nupEdad.Enabled = activo;
+            cmbSexo.Enabled = activo;
+            cmbNacionalidad.Enabled = activo;
+            cmbProfesion.Enabled = activo;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BE.Persona p = (BE.Persona)cmbNroPersona.SelectedItem;
+                int fa = 0;
+                DialogResult result = MessageBox.Show($"¿Está seguro de eliminar a {p.Nombre}? Esta acción no se puede deshacer", "Confirmación", MessageBoxButtons.OKCancel);
+
+                if (result == DialogResult.OK) fa = new BLL.Personas().RemoverPersona(p.NumeroPersona);
+                else MessageBox.Show("Operación cancelada");
+
+                if (fa != 0) MessageBox.Show($"Se ha eliminado a {p.Nombre}.");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
             ActualizarControles();
+            camposActivos(false);
+            btnAceptar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
     }
 }

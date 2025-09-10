@@ -34,6 +34,7 @@
             this.cmbIDNacionalidad = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.txbIDNacionalidad = new System.Windows.Forms.TextBox();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
@@ -72,19 +73,21 @@
             this.cmbIDNacionalidad.Name = "cmbIDNacionalidad";
             this.cmbIDNacionalidad.Size = new System.Drawing.Size(120, 21);
             this.cmbIDNacionalidad.TabIndex = 22;
+            this.cmbIDNacionalidad.SelectedIndexChanged += new System.EventHandler(this.cmbIDNacionalidad_SelectedIndexChanged);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(19, 26);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(44, 13);
+            this.label40.Size = new System.Drawing.Size(55, 13);
             this.label40.TabIndex = 20;
-            this.label40.Text = "ID Nac.";
+            this.label40.Text = "Lista Nac.";
             // 
             // gbxGrupo
             // 
             this.gbxGrupo.BackColor = System.Drawing.SystemColors.Control;
+            this.gbxGrupo.Controls.Add(this.btnEliminar);
             this.gbxGrupo.Controls.Add(this.txbIDNacionalidad);
             this.gbxGrupo.Controls.Add(this.label40);
             this.gbxGrupo.Controls.Add(this.btnAceptar);
@@ -97,6 +100,16 @@
             this.gbxGrupo.TabIndex = 31;
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(19, 236);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(63, 20);
+            this.btnEliminar.TabIndex = 32;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txbIDNacionalidad
             // 
@@ -131,5 +144,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.GroupBox gbxGrupo;
         private System.Windows.Forms.TextBox txbIDNacionalidad;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.txbIDProfesion = new System.Windows.Forms.TextBox();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             // 
             // gbxGrupo
             // 
+            this.gbxGrupo.Controls.Add(this.btnEliminar);
             this.gbxGrupo.Controls.Add(this.txbIDProfesion);
             this.gbxGrupo.Controls.Add(this.txbNombre);
             this.gbxGrupo.Controls.Add(this.label2);
@@ -52,6 +54,16 @@
             this.gbxGrupo.TabIndex = 15;
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(19, 236);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(63, 20);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txbIDProfesion
             // 
@@ -84,9 +96,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Profesion";
+            this.label1.Text = "Lista Prof.";
             // 
             // btnAceptar
             // 
@@ -106,6 +118,7 @@
             this.cmbIDProfesion.Name = "cmbIDProfesion";
             this.cmbIDProfesion.Size = new System.Drawing.Size(120, 21);
             this.cmbIDProfesion.TabIndex = 7;
+            this.cmbIDProfesion.SelectedIndexChanged += new System.EventHandler(this.cmbIDProfesion_SelectedIndexChanged);
             // 
             // Profesion
             // 
@@ -129,5 +142,6 @@
         private System.Windows.Forms.ComboBox cmbIDProfesion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txbIDProfesion;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

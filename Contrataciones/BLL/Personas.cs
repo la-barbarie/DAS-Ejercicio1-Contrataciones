@@ -103,13 +103,13 @@ namespace BLL
         public int GetMinEdad()
         {
             DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
-            return mp.GetMinOrMaxAge(1);
+            return mp.GetMinOrMaxAge((int)BE.enums.EOrden.MIN);
         }
 
         public int GetMaxEdad()
         {
             DAL.mapper.MapperPersona mp = new DAL.mapper.MapperPersona();
-            return mp.GetMinOrMaxAge(0);
+            return mp.GetMinOrMaxAge((int)BE.enums.EOrden.MAX);
         }
 
         public int GetCantidadPersonasPorNacionalidad(int id) //ID de nacionalidad
@@ -124,7 +124,7 @@ namespace BLL
                 cantidad++;
             }
 
-            return cantidad;
+            return promedio.Where(p => p.Nacionalidad.IdNacionalidad == id).First().CantidadPersonas;
         }
 
         public int GetPromedioEdadPorNacionalidad(int id) //ID de nacionalidad

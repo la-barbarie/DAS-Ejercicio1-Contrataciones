@@ -18,6 +18,7 @@ namespace Ejercicio_1.Controles
         {
             btnEditar = editar;
             InitializeComponent();
+            ActualizarControles();
 
             if (editar)
             {
@@ -30,6 +31,14 @@ namespace Ejercicio_1.Controles
                 txbIDNacionalidad.Visible = false;
 
                 btnAceptar.Text = "Modificar";
+
+                btnAceptar.Enabled = false;
+                btnAceptar.Visible = true;
+
+                btnEliminar.Enabled = false;
+                btnEliminar.Visible = true;
+
+                camposActivos(false);
             }
             else
             {
@@ -42,9 +51,10 @@ namespace Ejercicio_1.Controles
                 txbIDNacionalidad.Visible = true;
 
                 btnAceptar.Text = "Agregar";
-            }
 
-            ActualizarControles();
+                btnEliminar.Enabled = false;
+                btnEliminar.Visible = false;
+            }
         }
 
         private void ActualizarControles()
@@ -67,19 +77,62 @@ namespace Ejercicio_1.Controles
             {
                 if (nombre.Length < 0) throw new Exception("El nombre está vacío");
 
-                if (!btnEditar) fa = new BLL.Nacionalidad().InsertarNacionalidad(nombre);
+                if (!btnEditar)
+                {
+                    fa = new BLL.Nacionalidad().InsertarNacionalidad(nombre);
+                    ActualizarControles();
+                }
                 else
                 {
                     if (cmbIDNacionalidad.SelectedValue == null) throw new Exception("La ID es inválida o no ha sido seleccionada");
                     int id = (int)cmbIDNacionalidad.SelectedValue;
                     fa = new BLL.Nacionalidad().EditarPersona(id, nombre);
+                    ActualizarControles();
+                    cmbIDNacionalidad.SelectedItem = cmbIDNacionalidad.Items.Cast<BE.Nacionalidad>().FirstOrDefault(p => p.IdNacionalidad == id);
                 }
 
                 if (fa != 0) MessageBox.Show("Se ha cargado la información satisfactoriamente");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BE.Nacionalidad p = (BE.Nacionalidad)cmbIDNacionalidad.SelectedItem;
+                int fa = 0;
+                DialogResult result = MessageBox.Show($"¿Está seguro de eliminar a {p.Nombre}? Esta acción no se puede deshacer", "Confirmación", MessageBoxButtons.OKCancel);
+
+                if (result == DialogResult.OK) fa = new BLL.Nacionalidad().RemoverProfesion(p.IdNacionalidad);
+                else MessageBox.Show("Operación cancelada");
+
+                if (fa != 0) MessageBox.Show($"Se ha eliminado a {p.Nombre}.");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
             ActualizarControles();
+            camposActivos(false);
+            btnAceptar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        private void camposActivos(bool actuvo)
+        {
+            txbNombre.Enabled = actuvo;
+        }
+
+        private void cmbIDNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbIDNacionalidad.SelectedValue == null) return;
+
+            BE.Nacionalidad p = (BE.Nacionalidad)cmbIDNacionalidad.SelectedItem;
+            txbNombre.Text = p.Nombre;
+
+            camposActivos(true);
+            btnAceptar.Enabled = true;
+            btnEliminar.Enabled = true;
         }
     }
 }

@@ -150,10 +150,16 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
+                Nacionalidad nacionalidad = new Nacionalidad
+                {
+                    IdNacionalidad = (int)row["id_nacionalidad"],
+                    Nombre = row["nombre_nacionalidad"].ToString()
+                };
+
                 PersonasNacionalidadDTO dto = new PersonasNacionalidadDTO
                 {
-                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
-                    CantidadPersonas = (int)row["CantidadPersonas"]
+                    Nacionalidad = nacionalidad,
+                    CantidadPersonas = (int)row["cantidad_personas"]
                 };
                 personasAgrupadas.Add(dto);
             }
@@ -197,10 +203,16 @@ namespace DAL.mapper
 
             foreach (DataRow row in dataTable.Rows)
             {
+                Nacionalidad nacionalidad = new Nacionalidad
+                {
+                    IdNacionalidad = (int)row["id_nacionalidad"],
+                    Nombre = row["nombre_nacionalidad"].ToString()
+                };
+
                 PromedioEdadNacionalidadDTO dto = new PromedioEdadNacionalidadDTO
                 {
-                    Nacionalidad = (Nacionalidad)row["Nacionalidad"],
-                    PromedioEdad = (int)row["PromedioEdad"]
+                    Nacionalidad = nacionalidad,
+                    PromedioEdad = (int)row["promedio_edad"]
                 };
                 promedios.Add(dto);
             }

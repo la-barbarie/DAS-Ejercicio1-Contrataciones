@@ -45,6 +45,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
             this.txbNroPersona = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdad)).BeginInit();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +172,7 @@
             this.cmbNroPersona.Name = "cmbNroPersona";
             this.cmbNroPersona.Size = new System.Drawing.Size(120, 21);
             this.cmbNroPersona.TabIndex = 7;
+            this.cmbNroPersona.SelectedIndexChanged += new System.EventHandler(this.cmbNroPersona_SelectedIndexChanged);
             // 
             // btnAceptar
             // 
@@ -184,6 +186,7 @@
             // 
             // gbxGrupo
             // 
+            this.gbxGrupo.Controls.Add(this.btnEliminar);
             this.gbxGrupo.Controls.Add(this.txbNroPersona);
             this.gbxGrupo.Controls.Add(this.btnAceptar);
             this.gbxGrupo.Controls.Add(this.nupEdad);
@@ -216,6 +219,16 @@
             this.txbNroPersona.TabIndex = 7;
             this.txbNroPersona.Text = "---";
             this.txbNroPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(19, 236);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(63, 20);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Persona
             // 
@@ -250,5 +263,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox gbxGrupo;
         private System.Windows.Forms.TextBox txbNroPersona;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
