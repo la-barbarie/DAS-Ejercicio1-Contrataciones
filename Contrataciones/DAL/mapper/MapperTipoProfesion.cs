@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace DAL.mapper
 {
-    internal class MapperTipoProfesion
+    public class MapperTipoProfesion
     {
         private readonly Connection connection = new Connection();
 
         public List<Profesion> GetAll()
         {
             List<Profesion> profesiones = new List<Profesion>();
-            DataTable dataTable = connection.Read("", null);
+            DataTable dataTable = connection.Read("sp_getAllProfesiones", null);
 
             foreach (DataRow row in dataTable.Rows)
             {
                 Profesion profesion = new Profesion
                 {
+                    IdProfesion = Convert.ToInt32(row["id_profesion"]),
+                    Nombre = row["nombre"].ToString()
                 };
 
                 profesiones.Add(profesion);
@@ -29,31 +31,54 @@ namespace DAL.mapper
             return profesiones;
         }
 
+        public Profesion FindById(int id)
+        {
+            Profesion profesion = null;
+            DataTable dataTable = connection.Read("sp_getProfesionById", null);
+
+            DataRow row = dataTable.AsEnumerable().FirstOrDefault(r => Convert.ToInt32(r["id_profesion"]) == id);
+
+            if (row != null)
+            {
+                profesion = new Profesion
+                {
+                    IdProfesion = Convert.ToInt32(row["id_profesion"]),
+                    Nombre = row["nombre"].ToString()
+                };
+            }
+
+            return profesion;
+        }
+
         public int Insert(Profesion profesion)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
+                { "@nombre", profesion.Nombre }
             };
 
-            return connection.Write("", ParameterUtils.BuildParameters(parameters));
+            return connection.Write("sp_insertProfesion", ParameterUtils.BuildParameters(parameters));
         }
 
         public int Update(Profesion profesion)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
+                { "@id_profesion", profesion.IdProfesion },
+                { "@nombre", profesion.Nombre }
             };
 
-            return connection.Write("", ParameterUtils.BuildParameters(parameters));
+            return connection.Write("sp_updateProfesion", ParameterUtils.BuildParameters(parameters));
         }
 
-        public int Delete(Profesion profesion)
+        public int Delete(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
+                { "@id_profesion", id },
             };
 
-            return connection.Write("", ParameterUtils.BuildParameters(parameters));
+            return connection.Write("sp_deleteProfesion", ParameterUtils.BuildParameters(parameters));
         }
     }
 }

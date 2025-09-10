@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace BE.enums
 {
-    public class Class1
+    internal enum EOrden
     {
+        MAX,
+        MIN
     }
 }
