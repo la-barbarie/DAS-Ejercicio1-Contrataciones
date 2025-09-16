@@ -58,6 +58,7 @@
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txbNroPersona
             // 
@@ -201,6 +202,7 @@
             this.cmbNroPersona.Name = "cmbNroPersona";
             this.cmbNroPersona.Size = new System.Drawing.Size(120, 21);
             this.cmbNroPersona.TabIndex = 7;
+            this.cmbNroPersona.SelectedIndexChanged += new System.EventHandler(this.cmbNroPersona_SelectedIndexChanged);
             // 
             // gbxGrupo
             // 

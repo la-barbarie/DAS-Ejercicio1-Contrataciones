@@ -52,11 +52,29 @@
     <Compile Include="Controles\BusquedaAvanzada.Designer.cs">
       <DependentUpon>BusquedaAvanzada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\FormNacionalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\FormNacionalidad.Designer.cs">
+      <DependentUpon>FormNacionalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\FormPersona.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controles\FormPersona.Designer.cs">
       <DependentUpon>FormPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\FormProfesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\FormProfesion.Designer.cs">
+      <DependentUpon>FormProfesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\FormResumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\FormResumen.Designer.cs">
+      <DependentUpon>FormResumen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Nacionalidad.cs">
       <SubType>UserControl</SubType>
@@ -93,8 +111,17 @@
     <EmbeddedResource Include="Controles\BusquedaAvanzada.resx">
       <DependentUpon>BusquedaAvanzada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\FormNacionalidad.resx">
+      <DependentUpon>FormNacionalidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\FormPersona.resx">
       <DependentUpon>FormPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\FormProfesion.resx">
+      <DependentUpon>FormProfesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\FormResumen.resx">
+      <DependentUpon>FormResumen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Nacionalidad.resx">
       <DependentUpon>Nacionalidad.cs</DependentUpon>
