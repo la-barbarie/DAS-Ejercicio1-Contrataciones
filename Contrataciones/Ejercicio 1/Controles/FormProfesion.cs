@@ -15,10 +15,11 @@ namespace Ejercicio_1.Controles
     public partial class FormProfesion : Form
     {
         bool btnEditar;
-        Eventos eventos = new Eventos();
-        public FormProfesion(bool editar)
+        Eventos eventos;
+        public FormProfesion(bool editar, Eventos eventosMDI)
         {
             btnEditar = editar;
+            eventos = eventosMDI;
             InitializeComponent();
             ActualizarControles();
 

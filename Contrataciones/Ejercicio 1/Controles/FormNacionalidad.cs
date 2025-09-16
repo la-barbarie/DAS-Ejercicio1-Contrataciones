@@ -14,11 +14,12 @@ namespace Ejercicio_1.Controles
 {
     public partial class FormNacionalidad : Form
     {
+        Eventos eventos;
         bool btnEditar;
-        Eventos eventos = new Eventos();
-        public FormNacionalidad(bool editar)
+        public FormNacionalidad(bool editar, Eventos eventosMDI)
         {
             btnEditar = editar;
+            eventos = eventosMDI;
             InitializeComponent();
             ActualizarControles();
 

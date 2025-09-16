@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Ejercicio_1.Controles
 {
     public partial class Resumen : UserControl
     {
+        Eventos eventos;
         public Resumen()
         {
             InitializeComponent();
@@ -73,7 +75,7 @@ namespace Ejercicio_1.Controles
         private void bntBusqAvanz_Click(object sender, EventArgs e)
         {
             FindForm().Visible = false;
-            Form BusquedaAv = new BusquedaAvanzada();
+            Form BusquedaAv = new BusquedaAvanzada(eventos);
             BusquedaAv.ShowDialog();
             FindForm().Visible = true;
         }

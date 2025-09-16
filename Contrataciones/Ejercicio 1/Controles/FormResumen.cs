@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,15 @@ namespace Ejercicio_1.Controles
 {
     public partial class FormResumen : Form
     {
-        public FormResumen()
+        Eventos eventos;
+        public FormResumen(Eventos eventosMDI)
         {
+            eventos = eventosMDI;
             InitializeComponent();
             ActualizarDatos();
 
             cmbSelectNac.SelectedItem = cmbSelectNac.Items.Cast<BE.Nacionalidad>().FirstOrDefault(n => n.Nombre == txbNacMasCant.Text);
+            eventos.ActualizarDatos += ActualizarDatos;
         }
 
         private void ActualizarDatos()
@@ -73,7 +77,7 @@ namespace Ejercicio_1.Controles
         private void bntBusqAvanz_Click(object sender, EventArgs e)
         {
 
-            BusquedaAvanzada busquedaAvanzada = new BusquedaAvanzada();
+            BusquedaAvanzada busquedaAvanzada = new BusquedaAvanzada(eventos);
             busquedaAvanzada.MdiParent = this.MdiParent;
             busquedaAvanzada.Show();
 

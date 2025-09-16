@@ -15,10 +15,11 @@ namespace Ejercicio_1.Controles
     public partial class FormPersona : Form
     {
         bool btnEditar;
-        BLL.Eventos eventos = new BLL.Eventos();
-        public FormPersona(bool editar)
+        BLL.Eventos eventos;
+        public FormPersona(bool editar, Eventos eventosMDI)
         {
             btnEditar = editar;
+            eventos = eventosMDI;
             InitializeComponent();
             ActualizarControles();
 
