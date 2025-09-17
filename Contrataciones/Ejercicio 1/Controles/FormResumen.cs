@@ -61,8 +61,8 @@ namespace Ejercicio_1.Controles
             txbEdad.Text = p.Edad.ToString();
             if (p.Sexo == false) txbSexo.Text = "Femenino";
             else txbSexo.Text = "Masculino";
-            txbNacionalidad.Text = new BLL.Nacionalidad().GetById(p.Nacionalidad).Nombre;
-            txbProfesion.Text = new BLL.Profesion().GetById(p.Profesion).Nombre;
+            txbNacionalidad.Text = new BLL.Nacionalidad().GetById(p.Nacionalidad.IdNacionalidad).Nombre;
+            txbProfesion.Text = new BLL.Profesion().GetById(p.Profesion.IdProfesion).Nombre;
         }
 
         private void cmbSelectNac_SelectedIndexChanged(object sender, EventArgs e)
