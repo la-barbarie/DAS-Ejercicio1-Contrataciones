@@ -25,8 +25,8 @@ namespace DAL.mapper
                     Apellido = row["apellido"].ToString(),
                     Edad = (int)row["edad"],
                     Sexo = (bool)row["sexo"],
-                    Nacionalidad = (int)row["nacionalidad"],
-                    Profesion = (int)row["profesion"]
+                    Nacionalidad = new MapperNacionalidad().FindById((int)row["nacionalidad"]),
+                    Profesion = new MapperTipoProfesion().FindById((int)row["profesion"])
                 };
 
                 personas.Add(persona);
@@ -52,8 +52,8 @@ namespace DAL.mapper
                 Apellido = dataRow["apellido"].ToString(),
                 Edad = (int)dataRow["edad"],
                 Sexo = (bool)dataRow["sexo"],
-                Nacionalidad = (int)dataRow["nacionalidad"],
-                Profesion = (int)dataRow["profesion"]
+                Nacionalidad = (BE.Nacionalidad)dataRow["nacionalidad"],
+                Profesion = (BE.Profesion)dataRow["profesion"]
             };
         }
 
@@ -65,8 +65,8 @@ namespace DAL.mapper
                 { "@apellido", persona.Apellido },
                 { "@edad", persona.Edad },
                 { "@sexo", persona.Sexo },
-                { "@nacionalidad", persona.Nacionalidad },
-                { "@profesion", persona.Profesion }
+                { "@nacionalidad", persona.Nacionalidad.IdNacionalidad },
+                { "@profesion", persona.Profesion.IdProfesion }
             };
             return connection.Write("sp_insertPersona", ParameterUtils.BuildParameters(parameters));
         }
@@ -80,8 +80,8 @@ namespace DAL.mapper
                 { "@apellido", persona.Apellido },
                 { "@edad", persona.Edad },
                 { "@sexo", persona.Sexo },
-                { "@nacionalidad", persona.Nacionalidad },
-                { "@profesion", persona.Profesion }
+                { "@nacionalidad", persona.Nacionalidad.IdNacionalidad },
+                { "@profesion", persona.Profesion.IdProfesion }
             };
             return connection.Write("sp_updatePersona", ParameterUtils.BuildParameters(parameters));
         }

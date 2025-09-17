@@ -107,8 +107,8 @@ namespace Ejercicio_1.Controles
             nupEdad.Value = p.Edad;
             if (p.Sexo == false) cmbSexo.SelectedIndex = 0;
             else cmbSexo.SelectedIndex = 1;
-            cmbNacionalidad.SelectedItem = cmbNacionalidad.Items.Cast<BE.Nacionalidad>().FirstOrDefault(n => n.IdNacionalidad == p.Nacionalidad);
-            cmbProfesion.SelectedItem = cmbProfesion.Items.Cast<BE.Profesion>().FirstOrDefault(prof => prof.IdProfesion == p.Profesion);
+            cmbNacionalidad.SelectedItem = cmbNacionalidad.Items.Cast<BE.Nacionalidad>().FirstOrDefault(n => n.IdNacionalidad == p.Nacionalidad.IdNacionalidad);
+            cmbProfesion.SelectedItem = cmbProfesion.Items.Cast<BE.Profesion>().FirstOrDefault(prof => prof.IdProfesion == p.Profesion.IdProfesion);
 
             camposActivos(true);
             btnAceptar.Enabled = true;

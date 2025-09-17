@@ -7,7 +7,7 @@
         public string Apellido { get; set; }
         public int Edad { get; set; }
         public bool Sexo { get; set; }
-        public int Nacionalidad { get; set; }
-        public int Profesion { get; set; }
+        public Nacionalidad Nacionalidad { get; set; }
+        public Profesion Profesion { get; set; }
     }
 }

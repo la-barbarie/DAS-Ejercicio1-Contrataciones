@@ -34,8 +34,8 @@ namespace BLL
 
                 /* --- Los comentarios del integrante "X" no representan la opinión general del grupo --- */
 
-                p.Nacionalidad = nacionalidad.IdNacionalidad;
-                p.Profesion = profesion.IdProfesion;
+                p.Nacionalidad = nacionalidad;
+                p.Profesion = profesion;
 
                 // Se inserta en la base de datos
                 return mp.Insert(p);
@@ -66,8 +66,8 @@ namespace BLL
                                //0 - Mujer (pq son falsas y mentirosas)
                                //1 - Hombre (pq somos superiores y siempre verdaderos)
 
-                p.Nacionalidad = nacionalidad.IdNacionalidad;
-                p.Profesion = profesion.IdProfesion;
+                p.Nacionalidad = nacionalidad;
+                p.Profesion = profesion;
 
                 return mp.Update(p);
 
