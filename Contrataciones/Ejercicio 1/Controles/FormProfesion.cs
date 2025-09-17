@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +12,14 @@ using System.Windows.Forms;
 
 namespace Ejercicio_1.Controles
 {
-    public partial class Profesion : UserControl
+    public partial class FormProfesion : Form
     {
         bool btnEditar;
-        public Profesion(bool editar)
+        Eventos eventos;
+        public FormProfesion(bool editar, Eventos eventosMDI)
         {
             btnEditar = editar;
+            eventos = eventosMDI;
             InitializeComponent();
             ActualizarControles();
 
@@ -33,6 +36,7 @@ namespace Ejercicio_1.Controles
             btnEliminar.Visible = editar;
 
             if (editar) camposActivos(false);
+            eventos.ActualizarDatos += ActualizarControles;
         }
 
         private void camposActivos(bool activo)
@@ -60,7 +64,7 @@ namespace Ejercicio_1.Controles
             {
                 if (nombre.Length < 0) throw new Exception("El nombre está vacío");
 
-                if (!btnEditar) 
+                if (!btnEditar)
                 {
                     fa = new BLL.Profesion().InsertarProfesion(nombre);
                     ActualizarControles();
@@ -77,6 +81,8 @@ namespace Ejercicio_1.Controles
                 if (fa != 0) MessageBox.Show("Se ha cargado la información satisfactoriamente");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            eventos.InvocarActualizarDatos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -98,6 +104,8 @@ namespace Ejercicio_1.Controles
             camposActivos(false);
             btnAceptar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            eventos.InvocarActualizarDatos();
         }
 
         private void cmbIDProfesion_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,31 +118,6 @@ namespace Ejercicio_1.Controles
             camposActivos(true);
             btnAceptar.Enabled = true;
             btnEliminar.Enabled = true;
-        }
-
-        private void txbIDProfesion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txbNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gbxGrupo_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

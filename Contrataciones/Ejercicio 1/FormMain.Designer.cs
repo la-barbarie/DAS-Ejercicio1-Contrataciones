@@ -38,7 +38,6 @@
             this.profesiónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nacionalidadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarResuemnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlControles = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +51,7 @@
             this.mostrarResuemnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(250, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,21 +70,21 @@
             this.personaToolStripMenuItem.Name = "personaToolStripMenuItem";
             this.personaToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.personaToolStripMenuItem.Text = "Persona";
-            this.personaToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenu);
+            this.personaToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenuCargar);
             // 
             // profesiónToolStripMenuItem
             // 
             this.profesiónToolStripMenuItem.Name = "profesiónToolStripMenuItem";
             this.profesiónToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.profesiónToolStripMenuItem.Text = "Profesión";
-            this.profesiónToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenu);
+            this.profesiónToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenuCargar);
             // 
             // nacionalidadToolStripMenuItem
             // 
             this.nacionalidadToolStripMenuItem.Name = "nacionalidadToolStripMenuItem";
             this.nacionalidadToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.nacionalidadToolStripMenuItem.Text = "Nacionalidad";
-            this.nacionalidadToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenu);
+            this.nacionalidadToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenuCargar);
             // 
             // modificarToolStripMenuItem
             // 
@@ -102,44 +101,37 @@
             this.personaToolStripMenuItem1.Name = "personaToolStripMenuItem1";
             this.personaToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.personaToolStripMenuItem1.Text = "Persona";
-            this.personaToolStripMenuItem1.Click += new System.EventHandler(this.AddChangeMenu);
+            this.personaToolStripMenuItem1.Click += new System.EventHandler(this.AddChangeMenuEditar);
             // 
             // profesiónToolStripMenuItem1
             // 
             this.profesiónToolStripMenuItem1.Name = "profesiónToolStripMenuItem1";
             this.profesiónToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.profesiónToolStripMenuItem1.Text = "Profesión";
-            this.profesiónToolStripMenuItem1.Click += new System.EventHandler(this.AddChangeMenu);
+            this.profesiónToolStripMenuItem1.Click += new System.EventHandler(this.AddChangeMenuEditar);
             // 
             // nacionalidadToolStripMenuItem1
             // 
             this.nacionalidadToolStripMenuItem1.Name = "nacionalidadToolStripMenuItem1";
             this.nacionalidadToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.nacionalidadToolStripMenuItem1.Text = "Nacionalidad";
-            this.nacionalidadToolStripMenuItem1.Click += new System.EventHandler(this.AddChangeMenu);
+            this.nacionalidadToolStripMenuItem1.Click += new System.EventHandler(this.AddChangeMenuEditar);
             // 
             // mostrarResuemnToolStripMenuItem
             // 
             this.mostrarResuemnToolStripMenuItem.Name = "mostrarResuemnToolStripMenuItem";
             this.mostrarResuemnToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
             this.mostrarResuemnToolStripMenuItem.Text = "Mostrar resumen";
-            this.mostrarResuemnToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenu);
-            // 
-            // pnlControles
-            // 
-            this.pnlControles.Location = new System.Drawing.Point(0, 24);
-            this.pnlControles.Name = "pnlControles";
-            this.pnlControles.Size = new System.Drawing.Size(250, 310);
-            this.pnlControles.TabIndex = 2;
+            this.mostrarResuemnToolStripMenuItem.Click += new System.EventHandler(this.AddChangeMenuCargar);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 334);
-            this.Controls.Add(this.pnlControles);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -164,7 +156,6 @@
         private System.Windows.Forms.ToolStripMenuItem profesiónToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nacionalidadToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mostrarResuemnToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlControles;
     }
 }
 

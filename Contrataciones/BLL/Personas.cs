@@ -81,8 +81,8 @@ namespace BLL
         public int GetCantidad() => new DAL.mapper.MapperPersona().GetCantidadPersonas();
         public int GetMinEdad() => new DAL.mapper.MapperPersona().GetMinOrMaxAge((int)BE.enums.EOrden.MIN);
         public int GetMaxEdad() => new DAL.mapper.MapperPersona().GetMinOrMaxAge((int)BE.enums.EOrden.MAX);
-        public int GetCantidadPersonasPorNacionalidad(int id) => new DAL.mapper.MapperPersona().GetCantidadPersonasPorNacionalidad(id).Where(p => p.Nacionalidad.IdNacionalidad == id).First().CantidadPersonas;
-        public int GetPromedioEdadPorNacionalidad(int id) => new DAL.mapper.MapperPersona().GetPromedioEdadPorNacionalidad(id).Where(p => p.Nacionalidad.IdNacionalidad == id).First().PromedioEdad;
+        public int? GetCantidadPersonasPorNacionalidad(int id) => new DAL.mapper.MapperPersona().GetCantidadPersonasPorNacionalidad(id).Where(p => p.Nacionalidad.IdNacionalidad == id).FirstOrDefault().CantidadPersonas;
+        public int? GetPromedioEdadPorNacionalidad(int id) => new DAL.mapper.MapperPersona().GetPromedioEdadPorNacionalidad(id).Where(p => p.Nacionalidad.IdNacionalidad == id).FirstOrDefault().PromedioEdad;
         public List<PersonaFiltrada> ObtenerPersonasPorFiltros(FiltrosDTO filtros) => new MapperPersona().GetPersonasFiltradas(filtros);
     }
 }
