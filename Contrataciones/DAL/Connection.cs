@@ -16,38 +16,64 @@ namespace DAL
 
         private void Connect()
         {
-            sqlConnection.ConnectionString = ConfigurationManager.ConnectionStrings["Contrataciones"]?.ConnectionString;
-            sqlConnection.Open();
+            string cs = ConfigurationManager.ConnectionStrings["Contrataciones"]?.ConnectionString;
+            if (string.IsNullOrEmpty(cs))
+                throw new InvalidOperationException("Connection string 'Contrataciones' not found.");
+
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.ConnectionString = cs;
+                sqlConnection.Open();
+            }
         }
 
         private void Disconnect()
         {
-            sqlConnection.Close();
-            sqlConnection.Dispose();
+            if (sqlConnection.State != ConnectionState.Closed)
+                sqlConnection.Close();
         }
 
         public int Write(string spName, SqlParameter[] parameters)
         {
-            int rowsAffected;
-            Connect();
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.CommandText = spName;
+            SqlTransaction transaction = null;
 
-            if (parameters != null)
+            try
             {
-                sqlCommand.Parameters.AddRange(parameters);
-                rowsAffected = sqlCommand.ExecuteNonQuery();
+                Connect();
+
+                sqlCommand.Parameters.Clear();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = spName;
+
+                if (parameters != null)
+                    sqlCommand.Parameters.AddRange(parameters);
+                
+                transaction = sqlConnection.BeginTransaction();
+                sqlCommand.Transaction = transaction;
+
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+                
+                transaction.Commit();
+                return rowsAffected;
             }
-            else
+            catch (Exception)
             {
-                rowsAffected = sqlCommand.ExecuteNonQuery();
+                try
+                {
+                    if (transaction != null)
+                        transaction.Rollback();
+                }
+                catch (Exception) { }
+
+                throw;
             }
-
-            sqlCommand.Parameters.Clear();
-            Disconnect();
-
-            return rowsAffected;
+            finally
+            {
+                sqlCommand.Transaction = null;
+                sqlCommand.Parameters.Clear();
+                Disconnect();
+            }
         }
 
         public DataTable Read(string spName, SqlParameter[] parameters)
@@ -55,21 +81,30 @@ namespace DAL
             DataTable dataTable = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();
 
-            Connect();
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.CommandText = spName;
-
-            if (parameters != null)
+            try
             {
-                sqlCommand.Parameters.AddRange(parameters);
+                Connect();
+
+                sqlCommand.Parameters.Clear();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = spName;
+
+                if (parameters != null)
+                    sqlCommand.Parameters.AddRange(parameters);
+                
+                adapter.SelectCommand = sqlCommand;
+                adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
             }
 
-
-            adapter.SelectCommand = sqlCommand;
-            adapter.Fill(dataTable);
-
-            Disconnect();
             return dataTable;
         }
 
@@ -88,6 +123,10 @@ namespace DAL
 
                 object value = sqlCommand.ExecuteScalar();
                 return (value == null || value == DBNull.Value) ? 0 : Convert.ToInt32(value);
+            }
+            catch (Exception)
+            {
+                throw;
             }
             finally
             {
