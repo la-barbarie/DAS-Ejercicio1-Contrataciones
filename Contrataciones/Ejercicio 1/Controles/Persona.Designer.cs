@@ -44,8 +44,8 @@
             this.cmbNroPersona = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.gbxGrupo = new System.Windows.Forms.GroupBox();
-            this.txbNroPersona = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txbNroPersona = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdad)).BeginInit();
             this.gbxGrupo.SuspendLayout();
             this.SuspendLayout();
@@ -210,16 +210,6 @@
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
             // 
-            // txbNroPersona
-            // 
-            this.txbNroPersona.Location = new System.Drawing.Point(91, 24);
-            this.txbNroPersona.Name = "txbNroPersona";
-            this.txbNroPersona.ReadOnly = true;
-            this.txbNroPersona.Size = new System.Drawing.Size(120, 20);
-            this.txbNroPersona.TabIndex = 7;
-            this.txbNroPersona.Text = "---";
-            this.txbNroPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(19, 236);
@@ -229,6 +219,16 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txbNroPersona
+            // 
+            this.txbNroPersona.Location = new System.Drawing.Point(91, 24);
+            this.txbNroPersona.Name = "txbNroPersona";
+            this.txbNroPersona.ReadOnly = true;
+            this.txbNroPersona.Size = new System.Drawing.Size(120, 20);
+            this.txbNroPersona.TabIndex = 7;
+            this.txbNroPersona.Text = "---";
+            this.txbNroPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Persona
             // 

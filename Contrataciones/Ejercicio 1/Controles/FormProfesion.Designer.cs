@@ -1,13 +1,13 @@
 ﻿namespace Ejercicio_1.Controles
 {
-    partial class Profesion
+    partial class FormProfesion
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -48,13 +48,12 @@
             this.gbxGrupo.Controls.Add(this.label1);
             this.gbxGrupo.Controls.Add(this.btnAceptar);
             this.gbxGrupo.Controls.Add(this.cmbIDProfesion);
-            this.gbxGrupo.Location = new System.Drawing.Point(10, 28);
+            this.gbxGrupo.Location = new System.Drawing.Point(2, -1);
             this.gbxGrupo.Name = "gbxGrupo";
             this.gbxGrupo.Size = new System.Drawing.Size(230, 272);
-            this.gbxGrupo.TabIndex = 15;
+            this.gbxGrupo.TabIndex = 16;
             this.gbxGrupo.TabStop = false;
             this.gbxGrupo.Text = "---";
-            this.gbxGrupo.Enter += new System.EventHandler(this.gbxGrupo_Enter);
             // 
             // btnEliminar
             // 
@@ -75,7 +74,6 @@
             this.txbIDProfesion.TabIndex = 7;
             this.txbIDProfesion.Text = "---";
             this.txbIDProfesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txbIDProfesion.TextChanged += new System.EventHandler(this.txbIDProfesion_TextChanged);
             // 
             // txbNombre
             // 
@@ -83,7 +81,6 @@
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(120, 20);
             this.txbNombre.TabIndex = 8;
-            this.txbNombre.TextChanged += new System.EventHandler(this.txbNombre_TextChanged);
             // 
             // label2
             // 
@@ -93,7 +90,6 @@
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -103,7 +99,6 @@
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista Prof.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAceptar
             // 
@@ -125,13 +120,14 @@
             this.cmbIDProfesion.TabIndex = 7;
             this.cmbIDProfesion.SelectedIndexChanged += new System.EventHandler(this.cmbIDProfesion_SelectedIndexChanged);
             // 
-            // Profesion
+            // FormProfesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(234, 271);
             this.Controls.Add(this.gbxGrupo);
-            this.Name = "Profesion";
-            this.Size = new System.Drawing.Size(250, 310);
+            this.Name = "FormProfesion";
+            this.Text = "FormProfesion";
             this.gbxGrupo.ResumeLayout(false);
             this.gbxGrupo.PerformLayout();
             this.ResumeLayout(false);
@@ -141,12 +137,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbxGrupo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbNombre;
-        private System.Windows.Forms.ComboBox cmbIDProfesion;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txbIDProfesion;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txbIDProfesion;
+        private System.Windows.Forms.TextBox txbNombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox cmbIDProfesion;
     }
 }

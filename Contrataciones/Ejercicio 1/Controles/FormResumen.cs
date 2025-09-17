@@ -11,15 +11,17 @@ using System.Windows.Forms;
 
 namespace Ejercicio_1.Controles
 {
-    public partial class Resumen : UserControl
+    public partial class FormResumen : Form
     {
         Eventos eventos;
-        public Resumen()
+        public FormResumen(Eventos eventosMDI)
         {
+            eventos = eventosMDI;
             InitializeComponent();
             ActualizarDatos();
-            
+
             cmbSelectNac.SelectedItem = cmbSelectNac.Items.Cast<BE.Nacionalidad>().FirstOrDefault(n => n.Nombre == txbNacMasCant.Text);
+            eventos.ActualizarDatos += ActualizarDatos;
         }
 
         private void ActualizarDatos()
@@ -74,10 +76,11 @@ namespace Ejercicio_1.Controles
 
         private void bntBusqAvanz_Click(object sender, EventArgs e)
         {
-            FindForm().Visible = false;
-            Form BusquedaAv = new BusquedaAvanzada(eventos);
-            BusquedaAv.ShowDialog();
-            FindForm().Visible = true;
+
+            BusquedaAvanzada busquedaAvanzada = new BusquedaAvanzada(eventos);
+            busquedaAvanzada.MdiParent = this.MdiParent;
+            busquedaAvanzada.Show();
+
         }
     }
 }

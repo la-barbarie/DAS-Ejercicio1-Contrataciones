@@ -1,5 +1,6 @@
-﻿using BE.dto;
-using BE;
+﻿using BE;
+using BE.dto;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,10 @@ namespace Ejercicio_1.Controles
 {
     public partial class BusquedaAvanzada : Form
     {
-        public BusquedaAvanzada()
+        Eventos eventos;
+        public BusquedaAvanzada(Eventos eventosMDI)
         {
+            eventos = eventosMDI;
             InitializeComponent();
 
             List<BE.Nacionalidad> nacionalidades = new BLL.Nacionalidad().ListarNacionalidades();
@@ -29,6 +32,7 @@ namespace Ejercicio_1.Controles
             cmbProf.DisplayMember = "Nombre";
 
             LimpiarFiltros();
+            eventos.ActualizarDatos += LimpiarFiltros;
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
